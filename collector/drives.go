@@ -16,6 +16,7 @@ package collector
 import (
 	"encoding/json"
 	"fmt"
+	"strconv"
 	"sync"
 	"time"
 
@@ -26,13 +27,30 @@ import (
 )
 
 var (
-	drivesCache      = map[string][]Drive{}
+	drivesCache      = map[string]DrivesInventory{}
 	drivesCacheMutex = sync.RWMutex{}
 )
 
+type DrivesInventory struct {
+	Drives []Drive `json:"drives"`
+	Trays  []Tray  `json:"trays"`
+}
+
 type Drive struct {
-	ID     string `json:"id"`
-	Status string `json:"status"`
+	ID               string                `json:"id"`
+	Status           string                `json:"status"`
+	PhysicalLocation DrivePhysicalLocation `json:"physicalLocation"`
+	TrayID           string
+}
+
+type DrivePhysicalLocation struct {
+	Slot    int    `json:"slot"`
+	TrayRef string `json:"trayRef"`
+}
+
+type Tray struct {
+	TrayRef string `json:"trayRef"`
+	ID      int    `json:"trayId"`
 }
 
 type DrivesCollector struct {
@@ -49,7 +67,7 @@ func init() {
 func NewDrivesExporter(target config.Target, logger log.Logger, useCache bool) Collector {
 	return &DrivesCollector{
 		Status: prometheus.NewDesc(prometheus.BuildFQName(namespace, "drive", "status"),
-			"Drive status, 1=optimal 0=all other states", []string{"systemid", "id", "status"}, nil),
+			"Drive status, 1=optimal 0=all other states", []string{"systemid", "tray", "slot", "status"}, nil),
 		target:   target,
 		logger:   logger,
 		useCache: useCache,
@@ -70,17 +88,24 @@ func (c *DrivesCollector) Collect(ch chan<- prometheus.Metric) {
 		errorMetric = 1
 	}
 
-	for _, m := range metrics {
-		ch <- prometheus.MustNewConstMetric(c.Status, prometheus.GaugeValue, statusToFloat64(m.Status), c.target.Name, m.ID, m.Status)
+	trays := make(map[string]int)
+	for _, t := range metrics.Trays {
+		trays[t.TrayRef] = t.ID
+	}
+	for _, d := range metrics.Drives {
+		if trayId, ok := trays[d.PhysicalLocation.TrayRef]; ok {
+			d.TrayID = strconv.Itoa(trayId)
+		}
+		ch <- prometheus.MustNewConstMetric(c.Status, prometheus.GaugeValue, statusToFloat64(d.Status), c.target.Name, d.TrayID, strconv.Itoa(d.PhysicalLocation.Slot), d.Status)
 	}
 
 	ch <- prometheus.MustNewConstMetric(collectError, prometheus.GaugeValue, float64(errorMetric), "drives")
 	ch <- prometheus.MustNewConstMetric(collectDuration, prometheus.GaugeValue, time.Since(collectTime).Seconds(), "drives")
 }
 
-func (c *DrivesCollector) collect() ([]Drive, error) {
-	var metrics []Drive
-	body, err := getRequest(c.target, fmt.Sprintf("/devmgr/v2/storage-systems/%s/drives", c.target.Name), c.logger)
+func (c *DrivesCollector) collect() (DrivesInventory, error) {
+	var metrics DrivesInventory
+	body, err := getRequest(c.target, fmt.Sprintf("/devmgr/v2/storage-systems/%s/hardware-inventory", c.target.Name), c.logger)
 	if err != nil {
 		if c.useCache {
 			metrics = drivesReadCache(c.target.Name)
@@ -94,7 +119,7 @@ func (c *DrivesCollector) collect() ([]Drive, error) {
 		}
 		return metrics, err
 	}
-	if len(metrics) == 0 {
+	if len(metrics.Drives) == 0 {
 		if c.useCache {
 			metrics = drivesReadCache(c.target.Name)
 		}
@@ -106,8 +131,8 @@ func (c *DrivesCollector) collect() ([]Drive, error) {
 	return metrics, nil
 }
 
-func drivesReadCache(target string) []Drive {
-	var metrics []Drive
+func drivesReadCache(target string) DrivesInventory {
+	var metrics DrivesInventory
 	drivesCacheMutex.RLock()
 	if cache, ok := drivesCache[target]; ok {
 		metrics = cache
@@ -116,7 +141,7 @@ func drivesReadCache(target string) []Drive {
 	return metrics
 }
 
-func drivesWriteCache(target string, metrics []Drive) {
+func drivesWriteCache(target string, metrics DrivesInventory) {
 	drivesCacheMutex.Lock()
 	drivesCache[target] = metrics
 	drivesCacheMutex.Unlock()

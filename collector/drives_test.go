@@ -44,8 +44,8 @@ func TestDrivesCollector(t *testing.T) {
 	expected := `
 	# HELP eseries_drive_status Drive status, 1=optimal 0=all other states
 	# TYPE eseries_drive_status gauge
-	eseries_drive_status{id="010000005000C50063148F3F0000000000000000",status="optimal",systemid="test"} 1
-	eseries_drive_status{id="010000005000C5006344C2270000000000000000",status="optimal",systemid="test"} 1
+	eseries_drive_status{slot="58",status="optimal",systemid="test",tray="0"} 1
+	eseries_drive_status{slot="53",status="optimal",systemid="test",tray="0"} 1
 	# HELP eseries_exporter_collect_error Indicates if error has occurred during collection
 	# TYPE eseries_exporter_collect_error gauge
 	eseries_exporter_collect_error{collector="drives"} 0
@@ -114,8 +114,8 @@ func TestDrivesCollectorCache(t *testing.T) {
 	expected := `
 	# HELP eseries_drive_status Drive status, 1=optimal 0=all other states
 	# TYPE eseries_drive_status gauge
-	eseries_drive_status{id="010000005000C50063148F3F0000000000000000",status="optimal",systemid="test"} 1
-	eseries_drive_status{id="010000005000C5006344C2270000000000000000",status="optimal",systemid="test"} 1
+	eseries_drive_status{slot="58",status="optimal",systemid="test",tray="0"} 1
+	eseries_drive_status{slot="53",status="optimal",systemid="test",tray="0"} 1
 	# HELP eseries_exporter_collect_error Indicates if error has occurred during collection
 	# TYPE eseries_exporter_collect_error gauge
 	eseries_exporter_collect_error{collector="drives"} 1
