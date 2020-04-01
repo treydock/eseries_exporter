@@ -243,7 +243,7 @@
             "percentEnduranceUsed": -1,
             "spareBlocksRemainingPercent": 0
         },
-        "status": "optimal",
+        "status": "failed",
         "uncertified": false,
         "usableCapacity": "3994881449984",
         "volumeGroupIndex": 73,
