@@ -1,0 +1,6 @@
+modules:
+  default:
+    user: monitor
+    password: secret
+    proxy_url: http://localhost:8080
+    invalid_extra_field: value

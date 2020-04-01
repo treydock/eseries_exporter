@@ -1,0 +1,4 @@
+modules:
+  default:
+    password: secret
+    proxy_url: http://localhost:8080

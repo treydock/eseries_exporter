@@ -1,0 +1,252 @@
+[
+    {
+        "available": false,
+        "blkSize": 512,
+        "blkSizePhysical": 512,
+        "bypassSource": [],
+        "cause": "none",
+        "currentCommandAgingTimeout": 6,
+        "currentSpeed": "speed6gig",
+        "currentVolumeGroupRef": "0400000060080E500043A2C40000019056D7133B",
+        "defaultCommandAgingTimeout": 6,
+        "degradedChannels": [],
+        "driveMediaType": "hdd",
+        "driveRef": "010000005000C50063148F3F0000000000000000",
+        "driveTemperature": {
+            "currentTemp": 27,
+            "refTemp": 40
+        },
+        "fdeCapable": true,
+        "fdeEnabled": true,
+        "fdeLocked": false,
+        "fipsCapable": false,
+        "firmwareVersion": "MS04",
+        "fpgaVersion": "",
+        "hasDegradedChannel": false,
+        "hotSpare": false,
+        "id": "010000005000C50063148F3F0000000000000000",
+        "interfaceType": {
+            "driveType": "sas",
+            "fibre": null,
+            "nvme": null,
+            "sas": {
+                "deviceName": "5000C50063148F3F",
+                "drivePortAddresses": [
+                    {
+                        "channel": 1,
+                        "portIdentifier": "5000C50063148F3E"
+                    },
+                    {
+                        "channel": 2,
+                        "portIdentifier": "5000C50063148F3D"
+                    }
+                ]
+            },
+            "scsi": null
+        },
+        "interposerPresent": false,
+        "interposerRef": "0000000000000000000000000000000000000000",
+        "invalidDriveData": false,
+        "locateInProgress": false,
+        "lockKeyID": "270000001110CF2D69C06A79638EA7F2198E1056",
+        "lockKeyIDValue": ":60080e500043a1b00000000056d6b726:60080e500043a2c40000019156d715c0",
+        "lowestAlignedLBA": "0",
+        "manufacturer": "SEAGATE",
+        "manufacturerDate": "1424736000",
+        "maxSpeed": "speed6gig",
+        "mirrorDrive": "0000000000000000000000000000000000000000",
+        "nonRedundantAccess": false,
+        "offline": false,
+        "pfa": false,
+        "pfaReason": "none",
+        "phyDriveType": "sas",
+        "phyDriveTypeData": {
+          "phyDriveType": "sas",
+          "sataDriveAttributes": null
+      },
+      "physicalLocation": {
+          "label": "10",
+          "locationParent": {
+              "controllerRef": null,
+              "refType": "genericTyped",
+              "symbolRef": null,
+              "typedReference": {
+                  "componentType": "drawer",
+                  "symbolRef": "290050080E5209C1A00005000000000000000000"
+              }
+          },
+          "locationPosition": 10,
+          "slot": 58,
+          "trayRef": "0E50080E5209C1A0000000000000000000000000"
+      },
+      "productID": "ST4000NM0043",
+      "protectionInformationCapabilities": {
+          "protectionInformationCapable": true,
+          "protectionType": "type2Protection"
+      },
+      "protectionInformationCapable": false,
+      "protectionType": "type0Protection",
+      "rawCapacity": "4000787030016",
+      "removed": false,
+      "repairPolicy": {
+          "removalData": {
+              "removalMethod": "self",
+              "rtrAttributes": {
+                  "hasReadyToRemoveIndicator": true,
+                  "readyToRemove": false
+              }
+          },
+          "replacementMethod": "self"
+      },
+      "reserved": "",
+      "rtrAttributes": {
+          "cruType": "dedicated",
+          "parentCru": null,
+          "rtrAttributeData": {
+              "hasReadyToRemoveIndicator": true,
+              "readyToRemove": false
+          }
+      },
+      "serialNumber": "Z1Z7BG640000C5239XR9",
+      "softwareVersion": "MS04",
+      "sparedForDriveRef": "0000000000000000000000000000000000000000",
+      "spindleSpeed": 7200,
+      "ssdWearLife": {
+          "averageEraseCountPercent": 0,
+          "isWearLifeMonitoringSupported": false,
+          "percentEnduranceUsed": -1,
+          "spareBlocksRemainingPercent": 0
+      },
+      "status": "optimal",
+      "uncertified": false,
+      "usableCapacity": "3994881449984",
+      "volumeGroupIndex": 60,
+      "workingChannel": -1,
+      "worldWideName": "5000C50063148F3F0000000000000000"
+  },
+  {
+      "available": false,
+      "blkSize": 512,
+      "blkSizePhysical": 512,
+      "bypassSource": [],
+      "cause": "none",
+      "currentCommandAgingTimeout": 6,
+      "currentSpeed": "speed6gig",
+      "currentVolumeGroupRef": "0400000060080E500043A2C40000018F56D70F5B",
+      "defaultCommandAgingTimeout": 6,
+      "degradedChannels": [],
+      "driveMediaType": "hdd",
+      "driveRef": "010000005000C5006344C2270000000000000000",
+      "driveTemperature": {
+          "currentTemp": 35,
+          "refTemp": 40
+      },
+      "fdeCapable": true,
+      "fdeEnabled": true,
+      "fdeLocked": false,
+      "fipsCapable": false,
+      "firmwareVersion": "MS04",
+      "fpgaVersion": "",
+      "hasDegradedChannel": false,
+      "hotSpare": false,
+      "id": "010000005000C5006344C2270000000000000000",
+      "interfaceType": {
+          "driveType": "sas",
+          "fibre": null,
+          "nvme": null,
+          "sas": {
+              "deviceName": "5000C5006344C227",
+              "drivePortAddresses": [
+                  {
+                      "channel": 2,
+                      "portIdentifier": "5000C5006344C225"
+                  },
+                  {
+                      "channel": 1,
+                      "portIdentifier": "5000C5006344C226"
+                  }
+              ]
+          },
+          "scsi": null
+      },
+      "interposerPresent": false,
+      "interposerRef": "0000000000000000000000000000000000000000",
+      "invalidDriveData": false,
+      "locateInProgress": false,
+      "lockKeyID": "270000001110CF2D69C06A79638EA7F2198E1056",
+      "lockKeyIDValue": ":60080e500043a1b00000000056d6b726:60080e500043a2c40000019156d715c0",
+      "lowestAlignedLBA": "0",
+      "manufacturer": "SEAGATE",
+      "manufacturerDate": "1426464000",
+      "maxSpeed": "speed6gig",
+      "mirrorDrive": "0000000000000000000000000000000000000000",
+      "nonRedundantAccess": false,
+      "offline": false,
+      "pfa": false,
+      "pfaReason": "none",
+      "phyDriveType": "sas",
+      "phyDriveTypeData": {
+          "phyDriveType": "sas",
+          "sataDriveAttributes": null
+      },
+      "physicalLocation": {
+          "label": "5",
+          "locationParent": {
+              "controllerRef": null,
+              "refType": "genericTyped",
+              "symbolRef": null,
+              "typedReference": {
+                  "componentType": "drawer",
+                  "symbolRef": "290050080E5209C1A00005000000000000000000"
+              }
+          },
+          "locationPosition": 5,
+          "slot": 53,
+          "trayRef": "0E50080E5209C1A0000000000000000000000000"
+      },
+      "productID": "ST4000NM0043",
+      "protectionInformationCapabilities": {
+          "protectionInformationCapable": true,
+          "protectionType": "type2Protection"
+      },
+      "protectionInformationCapable": false,
+      "protectionType": "type0Protection",
+      "rawCapacity": "4000787030016",
+      "removed": false,
+      "repairPolicy": {
+          "removalData": {
+              "removalMethod": "self",
+              "rtrAttributes": {
+                  "hasReadyToRemoveIndicator": true,
+                  "readyToRemove": false
+              }
+          },
+          "replacementMethod": "self"
+      },
+      "reserved": "",
+      "rtrAttributes": {
+          "cruType": "dedicated",
+          "parentCru": null,
+          "rtrAttributeData": {
+              "hasReadyToRemoveIndicator": true,
+              "readyToRemove": false
+          }
+      },
+      "serialNumber": "Z1Z7VCLR0000R528XHB1",
+      "softwareVersion": "MS04",
+      "sparedForDriveRef": "0000000000000000000000000000000000000000",
+      "spindleSpeed": 7200,
+      "ssdWearLife": {
+          "averageEraseCountPercent": 0,
+          "isWearLifeMonitoringSupported": false,
+          "percentEnduranceUsed": -1,
+          "spareBlocksRemainingPercent": 0
+      },
+      "status": "optimal",
+      "uncertified": false,
+      "usableCapacity": "3994881449984",
+      "volumeGroupIndex": 73,
+      "workingChannel": -1,
+      "worldWideName": "5000C5006344C2270000000000000000"
+  }
+]

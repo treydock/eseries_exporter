@@ -1,0 +1,90 @@
+{
+    "accessVolume": {
+        "accessVolumeRef": "2100000060080E500043A1B00000010456D6B728",
+        "capacity": "20971520",
+        "currentControllerId": "",
+        "enabled": true,
+        "id": "2100000060080E500043A1B00000010456D6B728",
+        "listOfMappings": [],
+        "mapped": false,
+        "name": "Access",
+        "objectType": "accessVolume",
+        "preferredControllerId": "",
+        "reserved1": "",
+        "totalSizeInBytes": "0",
+        "volumeHandle": 16384,
+        "wwn": ""
+    },
+    "appVersion": "08.40.50.00",
+    "asupEnabled": true,
+    "autoLoadBalancingEnabled": false,
+    "bootTime": "2020-01-07T16:35:53.000+0000",
+    "bootVersion": "08.40.50.00",
+    "certificateStatus": "unknown",
+    "chassisSerialNumber": "721551500105",
+    "controllers": [
+        {
+            "certificateStatus": "unknown",
+            "controllerId": "070000000000000000000002",
+            "ipAddresses": [
+                "10.10.2.102"
+            ]
+        },
+        {
+            "certificateStatus": "unknown",
+            "controllerId": "070000000000000000000001",
+            "ipAddresses": [
+                "10.10.2.101"
+            ]
+        }
+    ],
+    "definedPartitionCount": 1,
+    "driveChannelPortDisabled": false,
+    "driveCount": 180,
+    "driveTypes": [
+        "sas"
+    ],
+    "externalKeyEnabled": false,
+    "fcRemoteMirroringState": "disabled",
+    "freePoolSpace": "2190433320960",
+    "freePoolSpaceAsString": "2190433320960",
+    "fwVersion": "08.40.50.00",
+    "hostConnectivityReportingEnabled": false,
+    "hostSpareCountInStandby": 0,
+    "hostSparesUsed": 0,
+    "hotSpareCount": 0,
+    "hotSpareSize": "0",
+    "hotSpareSizeAsString": "0",
+    "id": "e5660-01",
+    "ip1": "10.10.2.101",
+    "ip2": "10.10.2.102",
+    "lastContacted": "2020-04-01T15:25:51.890+0000",
+    "managementPaths": [
+        "10.10.2.101",
+        "10.10.2.102"
+    ],
+    "mediaScanPeriod": 30,
+    "metaTags": [],
+    "model": "5600",
+    "name": "e5660-01",
+    "nvsramVersion": "N5600-840834-D03",
+    "passwordSet": true,
+    "passwordStatus": "valid",
+    "recoveryModeEnabled": false,
+    "remoteMirroringEnabled": false,
+    "securityKeyEnabled": true,
+    "simplexModeEnabled": false,
+    "status": "optimal",
+    "supportedManagementPorts": [
+        "symbol"
+    ],
+    "traceEnabled": false,
+    "trayCount": 3,
+    "types": "",
+    "unconfiguredSpace": "0",
+    "unconfiguredSpaceAsStrings": "0",
+    "unconfiguredSpaceByDriveType": {},
+    "usedPoolSpace": "544490183983104",
+    "usedPoolSpaceAsString": "544490183983104",
+    "wwn": "60080E500043A1B00000000056D6B726"
+}

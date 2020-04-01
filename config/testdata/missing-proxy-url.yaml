@@ -1,0 +1,4 @@
+modules:
+  default:
+    user: monitor
+    password: secret
