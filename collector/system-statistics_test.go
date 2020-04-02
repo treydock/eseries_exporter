@@ -45,9 +45,9 @@ func TestSystemStatisticsCollector(t *testing.T) {
 	# HELP eseries_exporter_collect_error Indicates if error has occurred during collection
 	# TYPE eseries_exporter_collect_error gauge
 	eseries_exporter_collect_error{collector="system-statistics"} 0
-	# HELP eseries_system_average_read_op_size System statistic averageReadOpSize
-	# TYPE eseries_system_average_read_op_size gauge
-	eseries_system_average_read_op_size{id="e5660-01"} 17357.11013434037
+	# HELP eseries_system_average_read_op_size_bytes System statistic averageReadOpSize
+	# TYPE eseries_system_average_read_op_size_bytes gauge
+	eseries_system_average_read_op_size_bytes{id="e5660-01"} 17357.11013434037
 	`
 	server := httptest.NewServer(http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {
 		_, _ = rw.Write(fixtureData)
@@ -77,7 +77,7 @@ func TestSystemStatisticsCollector(t *testing.T) {
 			"eseries_system_write_iops", "eseries_system_write_ops", "eseries_system_write_physical_iops",
 			"eseries_system_write_response_time", "eseries_system_write_throughput",
 		*/
-		"eseries_system_average_read_op_size",
+		"eseries_system_average_read_op_size_bytes",
 		"eseries_exporter_collect_error"); err != nil {
 		t.Errorf("unexpected collecting result:\n%s", err)
 	}
@@ -109,7 +109,7 @@ func TestSystemStatisticsCollectorError(t *testing.T) {
 		t.Errorf("Unexpected collection count %d, expected 2", val)
 	}
 	if err := testutil.GatherAndCompare(gatherers, strings.NewReader(expected),
-		"eseries_system_average_read_op_size", "eseries_exporter_collect_error"); err != nil {
+		"eseries_system_average_read_op_size_bytes", "eseries_exporter_collect_error"); err != nil {
 		t.Errorf("unexpected collecting result:\n%s", err)
 	}
 }

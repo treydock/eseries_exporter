@@ -46,10 +46,10 @@ func TestDriveStatisticsCollector(t *testing.T) {
 		t.Fatalf("Error loading fixture data: %s", err.Error())
 	}
 	expected := `
-	# HELP eseries_drive_average_read_op_size Drive statistic averageReadOpSize
-	# TYPE eseries_drive_average_read_op_size gauge
-	eseries_drive_average_read_op_size{slot="58",tray="0"} 39620.99569760295
-	eseries_drive_average_read_op_size{slot="53",tray="0"} 21312.646464646463
+	# HELP eseries_drive_average_read_op_size_bytes Drive statistic averageReadOpSize
+	# TYPE eseries_drive_average_read_op_size_bytes gauge
+	eseries_drive_average_read_op_size_bytes{slot="58",tray="0"} 39620.99569760295
+	eseries_drive_average_read_op_size_bytes{slot="53",tray="0"} 21312.646464646463
 	# HELP eseries_exporter_collect_error Indicates if error has occurred during collection
 	# TYPE eseries_exporter_collect_error gauge
 	eseries_exporter_collect_error{collector="drive-statistics"} 0
@@ -86,7 +86,7 @@ func TestDriveStatisticsCollector(t *testing.T) {
 			"eseries_drive_write_iops", "eseries_drive_write_ops", "eseries_drive_write_physical_iops",
 			"eseries_drive_write_response_time", "eseries_drive_write_throughput",
 		*/
-		"eseries_drive_average_read_op_size",
+		"eseries_drive_average_read_op_size_bytes",
 		"eseries_exporter_collect_error"); err != nil {
 		t.Errorf("unexpected collecting result:\n%s", err)
 	}
@@ -118,7 +118,7 @@ func TestDriveStatisticsCollectorError(t *testing.T) {
 		t.Errorf("Unexpected collection count %d, expected 2", val)
 	}
 	if err := testutil.GatherAndCompare(gatherers, strings.NewReader(expected),
-		"eseries_drive_average_read_op_size", "eseries_exporter_collect_error"); err != nil {
+		"eseries_drive_average_read_op_size_bytes", "eseries_exporter_collect_error"); err != nil {
 		t.Errorf("unexpected collecting result:\n%s", err)
 	}
 }
