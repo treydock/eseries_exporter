@@ -58,6 +58,14 @@ If no `timeout` is defined the default is `10`.
 
 This exporter expects to communicate with SANtricity Web Services Proxy API and that your storage controllers are already setup to be accessed through that API.
 
+## Docker
+
+Example of running the Docker container
+
+```
+docker run -d -p 9313:9313 -v "eseries_exporter.yaml:/ssh_exporter.yaml:ro" treydock/eseries_exporter
+```
+
 ## Install
 
 Download the [latest release](https://github.com/treydock/eseries_exporter/releases)
