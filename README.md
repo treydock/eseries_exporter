@@ -22,6 +22,7 @@ Name | Description | Default
 drives | Collect status information about drives | Enabled
 drive-statistics | Collect statistics on drives | Enabled
 storage-systems | Collect status information about storage systems | Enabled
+system-statistics | Collect storage system statistics | Enabled
 
 ## Configuration
 
