@@ -41,6 +41,7 @@ type Drive struct {
 	Status           string                `json:"status"`
 	PhysicalLocation DrivePhysicalLocation `json:"physicalLocation"`
 	TrayID           string
+	Slot             string
 }
 
 type DrivePhysicalLocation struct {
@@ -96,7 +97,8 @@ func (c *DrivesCollector) Collect(ch chan<- prometheus.Metric) {
 		if trayId, ok := trays[d.PhysicalLocation.TrayRef]; ok {
 			d.TrayID = strconv.Itoa(trayId)
 		}
-		ch <- prometheus.MustNewConstMetric(c.Status, prometheus.GaugeValue, statusToFloat64(d.Status), c.target.Name, d.TrayID, strconv.Itoa(d.PhysicalLocation.Slot), d.Status)
+		d.Slot = strconv.Itoa(d.PhysicalLocation.Slot)
+		ch <- prometheus.MustNewConstMetric(c.Status, prometheus.GaugeValue, statusToFloat64(d.Status), c.target.Name, d.TrayID, d.Slot, d.Status)
 	}
 
 	ch <- prometheus.MustNewConstMetric(collectError, prometheus.GaugeValue, float64(errorMetric), "drives")
