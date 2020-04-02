@@ -4,7 +4,7 @@ DOCKER_REPO	 ?= treydock
 
 include Makefile.common
 
-DOCKER_IMAGE_NAME ?= ssh_exporter
+DOCKER_IMAGE_NAME ?= eseries_exporter
 
 coverage:
 	go test -race -coverpkg=./... -coverprofile=coverage.txt -covermode=atomic ./...
