@@ -66,7 +66,7 @@ type DriveStatisticsCollector struct {
 }
 
 func init() {
-	registerCollector("drive-statistics", true, NewDriveStatisticsExporter)
+	registerCollector("drive-statistics", false, NewDriveStatisticsExporter)
 }
 
 func NewDriveStatisticsExporter(target config.Target, logger log.Logger, useCache bool) Collector {

@@ -20,7 +20,7 @@ Collectors are enabled or disabled via a config file.
 Name | Description | Default
 -----|-------------|--------
 drives | Collect status information about drives | Enabled
-drive-statistics | Collect statistics on drives | Enabled
+drive-statistics | Collect statistics on drives | Disabled
 storage-systems | Collect status information about storage systems | Enabled
 system-statistics | Collect storage system statistics | Enabled
 
