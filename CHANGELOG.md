@@ -1,3 +1,7 @@
+## 0.1.1 / 2020-04-03
+
+* Minor fix to Docker container
+
 ## 0.1.0 / 2020-04-03
 
 * Disable drive-statistics collector by default
