@@ -47,7 +47,14 @@ func TestStorageSystemCollector(t *testing.T) {
 	eseries_exporter_collect_error{collector="storage-systems"} 0
 	# HELP eseries_storage_system_status Storage System status, 1=optimal 0=all other states
 	# TYPE eseries_storage_system_status gauge
+	eseries_storage_system_status{id="e5660-01",status="lockDown"} 0
+	eseries_storage_system_status{id="e5660-01",status="needsAttn"} 0
+	eseries_storage_system_status{id="e5660-01",status="neverContacted"} 0
+	eseries_storage_system_status{id="e5660-01",status="newDevice"} 0
+	eseries_storage_system_status{id="e5660-01",status="offline"} 0
 	eseries_storage_system_status{id="e5660-01",status="optimal"} 1
+	eseries_storage_system_status{id="e5660-01",status="removed"} 0
+	eseries_storage_system_status{id="e5660-01",status="unknown"} 0
 	`
 	server := httptest.NewServer(http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {
 		_, _ = rw.Write(fixtureData)
@@ -67,8 +74,8 @@ func TestStorageSystemCollector(t *testing.T) {
 	gatherers := setupGatherer(collector)
 	if val, err := testutil.GatherAndCount(gatherers); err != nil {
 		t.Errorf("Unexpected error: %v", err)
-	} else if val != 3 {
-		t.Errorf("Unexpected collection count %d, expected 3", val)
+	} else if val != 10 {
+		t.Errorf("Unexpected collection count %d, expected 10", val)
 	}
 	if err := testutil.GatherAndCompare(gatherers, strings.NewReader(expected),
 		"eseries_storage_system_status", "eseries_exporter_collect_error"); err != nil {

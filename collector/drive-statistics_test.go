@@ -76,8 +76,8 @@ func TestDriveStatisticsCollector(t *testing.T) {
 	gatherers := setupGatherer(collector)
 	if val, err := testutil.GatherAndCount(gatherers); err != nil {
 		t.Errorf("Unexpected error: %v", err)
-	} else if val != 32 {
-		t.Errorf("Unexpected collection count %d, expected 32", val)
+	} else if val != 28 {
+		t.Errorf("Unexpected collection count %d, expected 28", val)
 	}
 	if err := testutil.GatherAndCompare(gatherers, strings.NewReader(expected),
 		/*

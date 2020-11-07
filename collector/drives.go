@@ -25,6 +25,22 @@ import (
 	"github.com/treydock/eseries_exporter/config"
 )
 
+var (
+	driveStatuses = []string{
+		"optimal",
+		"failed",
+		"replaced",
+		"bypassed",
+		"unresponsive",
+		"removed",
+		"incompatible",
+		"dataRelocation",
+		"preFailCopy",
+		"preFailCopyPending",
+		"__UNDEFINED",
+	}
+)
+
 type DrivesInventory struct {
 	Drives []Drive `json:"drives"`
 	Trays  []Tray  `json:"trays"`
@@ -61,7 +77,7 @@ func init() {
 func NewDrivesExporter(target config.Target, logger log.Logger) Collector {
 	return &DrivesCollector{
 		Status: prometheus.NewDesc(prometheus.BuildFQName(namespace, "drive", "status"),
-			"Drive status, 1=optimal 0=all other states", []string{"systemid", "tray", "slot", "status"}, nil),
+			"Drive status", []string{"systemid", "tray", "slot", "status"}, nil),
 		target: target,
 		logger: logger,
 	}
@@ -90,7 +106,18 @@ func (c *DrivesCollector) Collect(ch chan<- prometheus.Metric) {
 			d.TrayID = strconv.Itoa(trayId)
 		}
 		d.Slot = strconv.Itoa(d.PhysicalLocation.Slot)
-		ch <- prometheus.MustNewConstMetric(c.Status, prometheus.GaugeValue, statusToFloat64(d.Status), c.target.Name, d.TrayID, d.Slot, d.Status)
+		for _, driveStatus := range driveStatuses {
+			var value float64
+			if driveStatus == d.Status {
+				value = 1
+			}
+			ch <- prometheus.MustNewConstMetric(c.Status, prometheus.GaugeValue, value, c.target.Name, d.TrayID, d.Slot, driveStatus)
+		}
+		var unknown float64
+		if !sliceContains(driveStatuses, d.Status) {
+			unknown = 1
+		}
+		ch <- prometheus.MustNewConstMetric(c.Status, prometheus.GaugeValue, unknown, c.target.Name, d.TrayID, d.Slot, "unknown")
 	}
 
 	ch <- prometheus.MustNewConstMetric(collectError, prometheus.GaugeValue, float64(errorMetric), "drives")
