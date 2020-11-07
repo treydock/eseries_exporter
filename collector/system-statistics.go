@@ -79,14 +79,13 @@ type SystemStatisticsCollector struct {
 	WriteThroughput              *prometheus.Desc
 	target                       config.Target
 	logger                       log.Logger
-	useCache                     bool
 }
 
 func init() {
 	registerCollector("system-statistics", true, NewSystemStatisticsExporter)
 }
 
-func NewSystemStatisticsExporter(target config.Target, logger log.Logger, useCache bool) Collector {
+func NewSystemStatisticsExporter(target config.Target, logger log.Logger) Collector {
 	return &SystemStatisticsCollector{
 		AverageReadOpSize: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "average_read_op_size_bytes"),
 			"System statistic averageReadOpSize", []string{"id"}, nil),
@@ -136,9 +135,8 @@ func NewSystemStatisticsExporter(target config.Target, logger log.Logger, useCac
 			"System statistic writeResponseTime", []string{"id"}, nil),
 		WriteThroughput: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "write_throughput_mb_per_second"),
 			"System statistic combinedThroughput", []string{"id"}, nil),
-		target:   target,
-		logger:   logger,
-		useCache: useCache,
+		target: target,
+		logger: logger,
 	}
 }
 

@@ -24,7 +24,6 @@ import (
 	"github.com/go-kit/kit/log/level"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/treydock/eseries_exporter/config"
-	"gopkg.in/alecthomas/kingpin.v2"
 )
 
 const (
@@ -32,10 +31,9 @@ const (
 )
 
 var (
-	exporterUseCache = kingpin.Flag("exporter.use-cache", "Use cached metrics if commands timeout or produce errors").Default("false").Bool()
-	collectorState   = make(map[string]bool)
-	factories        = make(map[string]func(target config.Target, logger log.Logger, useCache bool) Collector)
-	collectDuration  = prometheus.NewDesc(
+	collectorState  = make(map[string]bool)
+	factories       = make(map[string]func(target config.Target, logger log.Logger) Collector)
+	collectDuration = prometheus.NewDesc(
 		prometheus.BuildFQName(namespace, "exporter", "collector_duration_seconds"),
 		"Collector time duration.",
 		[]string{"collector"}, nil)
@@ -55,7 +53,7 @@ type EseriesCollector struct {
 	Collectors map[string]Collector
 }
 
-func registerCollector(collector string, isDefaultEnabled bool, factory func(target config.Target, logger log.Logger, useCache bool) Collector) {
+func registerCollector(collector string, isDefaultEnabled bool, factory func(target config.Target, logger log.Logger) Collector) {
 	collectorState[collector] = isDefaultEnabled
 	factories[collector] = factory
 }
@@ -71,7 +69,7 @@ func NewCollector(target config.Target, logger log.Logger) *EseriesCollector {
 		}
 		var collector Collector
 		if enable {
-			collector = factories[key](target, log.With(logger, "collector", key, "target", target.Name), *exporterUseCache)
+			collector = factories[key](target, log.With(logger, "collector", key, "target", target.Name))
 			collectors[key] = collector
 		}
 	}

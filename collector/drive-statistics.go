@@ -62,14 +62,13 @@ type DriveStatisticsCollector struct {
 	WriteThroughput      *prometheus.Desc
 	target               config.Target
 	logger               log.Logger
-	useCache             bool
 }
 
 func init() {
 	registerCollector("drive-statistics", false, NewDriveStatisticsExporter)
 }
 
-func NewDriveStatisticsExporter(target config.Target, logger log.Logger, useCache bool) Collector {
+func NewDriveStatisticsExporter(target config.Target, logger log.Logger) Collector {
 	return &DriveStatisticsCollector{
 		AverageReadOpSize: prometheus.NewDesc(prometheus.BuildFQName(namespace, "drive", "average_read_op_size_bytes"),
 			"Drive statistic averageReadOpSize", []string{"tray", "slot"}, nil),
@@ -101,9 +100,8 @@ func NewDriveStatisticsExporter(target config.Target, logger log.Logger, useCach
 			"Drive statistic writeResponseTime", []string{"tray", "slot"}, nil),
 		WriteThroughput: prometheus.NewDesc(prometheus.BuildFQName(namespace, "drive", "write_throughput_mb_per_second"),
 			"Drive statistic combinedThroughput", []string{"tray", "slot"}, nil),
-		target:   target,
-		logger:   logger,
-		useCache: useCache,
+		target: target,
+		logger: logger,
 	}
 }
 

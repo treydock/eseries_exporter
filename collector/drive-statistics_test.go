@@ -72,7 +72,7 @@ func TestDriveStatisticsCollector(t *testing.T) {
 	}
 	w := log.NewSyncWriter(os.Stderr)
 	logger := log.NewLogfmtLogger(w)
-	collector := NewDriveStatisticsExporter(target, logger, false)
+	collector := NewDriveStatisticsExporter(target, logger)
 	gatherers := setupGatherer(collector)
 	if val, err := testutil.GatherAndCount(gatherers); err != nil {
 		t.Errorf("Unexpected error: %v", err)
@@ -114,7 +114,7 @@ func TestDriveStatisticsCollectorError(t *testing.T) {
 	}
 	w := log.NewSyncWriter(os.Stderr)
 	logger := log.NewLogfmtLogger(w)
-	collector := NewDriveStatisticsExporter(target, logger, false)
+	collector := NewDriveStatisticsExporter(target, logger)
 	gatherers := setupGatherer(collector)
 	if val, err := testutil.GatherAndCount(gatherers); err != nil {
 		t.Errorf("Unexpected error: %v", err)
