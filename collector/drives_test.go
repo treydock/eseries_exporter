@@ -42,10 +42,32 @@ func TestDrivesCollector(t *testing.T) {
 		t.Fatalf("Error loading fixture data: %s", err.Error())
 	}
 	expected := `
-	# HELP eseries_drive_status Drive status, 1=optimal 0=all other states
+	# HELP eseries_drive_status Drive status
 	# TYPE eseries_drive_status gauge
+	eseries_drive_status{slot="53",status="bypassed",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="53",status="dataRelocation",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="53",status="failed",systemid="test",tray="0"} 1
+	eseries_drive_status{slot="53",status="incompatible",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="53",status="optimal",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="53",status="preFailCopy",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="53",status="preFailCopyPending",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="53",status="removed",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="53",status="replaced",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="53",status="unknown",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="53",status="unresponsive",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="53",status="__UNDEFINED",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="58",status="bypassed",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="58",status="dataRelocation",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="58",status="failed",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="58",status="incompatible",systemid="test",tray="0"} 0
 	eseries_drive_status{slot="58",status="optimal",systemid="test",tray="0"} 1
-	eseries_drive_status{slot="53",status="failed",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="58",status="preFailCopy",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="58",status="preFailCopyPending",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="58",status="removed",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="58",status="replaced",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="58",status="unknown",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="58",status="unresponsive",systemid="test",tray="0"} 0
+	eseries_drive_status{slot="58",status="__UNDEFINED",systemid="test",tray="0"} 0
 	# HELP eseries_exporter_collect_error Indicates if error has occurred during collection
 	# TYPE eseries_exporter_collect_error gauge
 	eseries_exporter_collect_error{collector="drives"} 0
@@ -68,8 +90,8 @@ func TestDrivesCollector(t *testing.T) {
 	gatherers := setupGatherer(collector)
 	if val, err := testutil.GatherAndCount(gatherers); err != nil {
 		t.Errorf("Unexpected error: %v", err)
-	} else if val != 4 {
-		t.Errorf("Unexpected collection count %d, expected 4", val)
+	} else if val != 26 {
+		t.Errorf("Unexpected collection count %d, expected 26", val)
 	}
 	if err := testutil.GatherAndCompare(gatherers, strings.NewReader(expected),
 		"eseries_drive_status", "eseries_exporter_collect_error"); err != nil {

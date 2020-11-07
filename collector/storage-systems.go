@@ -24,6 +24,18 @@ import (
 	"github.com/treydock/eseries_exporter/config"
 )
 
+var (
+	storageSystemsStatuses = []string{
+		"neverContacted",
+		"offline",
+		"optimal",
+		"needsAttn",
+		"removed",
+		"newDevice",
+		"lockDown",
+	}
+)
+
 type StorageSystem struct {
 	ID     string `json:"id"`
 	Status string `json:"status"`
@@ -63,7 +75,18 @@ func (c *StorageSystemsCollector) Collect(ch chan<- prometheus.Metric) {
 	}
 
 	if err == nil {
-		ch <- prometheus.MustNewConstMetric(c.Status, prometheus.GaugeValue, statusToFloat64(metric.Status), metric.ID, metric.Status)
+		for _, status := range storageSystemsStatuses {
+			var value float64
+			if status == metric.Status {
+				value = 1
+			}
+			ch <- prometheus.MustNewConstMetric(c.Status, prometheus.GaugeValue, value, metric.ID, status)
+		}
+		var unknown float64
+		if !sliceContains(storageSystemsStatuses, metric.Status) {
+			unknown = 1
+		}
+		ch <- prometheus.MustNewConstMetric(c.Status, prometheus.GaugeValue, unknown, metric.ID, "unknown")
 	}
 	ch <- prometheus.MustNewConstMetric(collectError, prometheus.GaugeValue, float64(errorMetric), "storage-systems")
 	ch <- prometheus.MustNewConstMetric(collectDuration, prometheus.GaugeValue, time.Since(collectTime).Seconds(), "storage-systems")

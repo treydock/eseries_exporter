@@ -14,7 +14,6 @@
 package collector
 
 import (
-	"bytes"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -83,14 +82,6 @@ func sliceContains(slice []string, str string) bool {
 		}
 	}
 	return false
-}
-
-func statusToFloat64(data string) float64 {
-	if bytes.Equal([]byte(data), []byte("optimal")) {
-		return 1
-	} else {
-		return 0
-	}
 }
 
 func getRequest(target config.Target, path string, logger log.Logger) ([]byte, error) {
