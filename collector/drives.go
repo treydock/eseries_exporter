@@ -77,7 +77,7 @@ func init() {
 func NewDrivesExporter(target config.Target, logger log.Logger) Collector {
 	return &DrivesCollector{
 		Status: prometheus.NewDesc(prometheus.BuildFQName(namespace, "drive", "status"),
-			"Drive status", []string{"systemid", "tray", "slot", "status"}, nil),
+			"Drive status", []string{"tray", "slot", "status"}, nil),
 		target: target,
 		logger: logger,
 	}
@@ -111,13 +111,13 @@ func (c *DrivesCollector) Collect(ch chan<- prometheus.Metric) {
 			if driveStatus == d.Status {
 				value = 1
 			}
-			ch <- prometheus.MustNewConstMetric(c.Status, prometheus.GaugeValue, value, c.target.Name, d.TrayID, d.Slot, driveStatus)
+			ch <- prometheus.MustNewConstMetric(c.Status, prometheus.GaugeValue, value, d.TrayID, d.Slot, driveStatus)
 		}
 		var unknown float64
 		if !sliceContains(driveStatuses, d.Status) {
 			unknown = 1
 		}
-		ch <- prometheus.MustNewConstMetric(c.Status, prometheus.GaugeValue, unknown, c.target.Name, d.TrayID, d.Slot, "unknown")
+		ch <- prometheus.MustNewConstMetric(c.Status, prometheus.GaugeValue, unknown, d.TrayID, d.Slot, "unknown")
 	}
 
 	ch <- prometheus.MustNewConstMetric(collectError, prometheus.GaugeValue, float64(errorMetric), "drives")
