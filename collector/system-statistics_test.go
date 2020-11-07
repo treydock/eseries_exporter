@@ -65,7 +65,9 @@ func TestSystemStatisticsCollector(t *testing.T) {
 	logger := log.NewLogfmtLogger(w)
 	collector := NewSystemStatisticsExporter(target, logger, false)
 	gatherers := setupGatherer(collector)
-	if val := testutil.CollectAndCount(collector); val != 26 {
+	if val, err := testutil.GatherAndCount(gatherers); err != nil {
+		t.Errorf("Unexpected error: %v", err)
+	} else if val != 26 {
 		t.Errorf("Unexpected collection count %d, expected 26", val)
 	}
 	if err := testutil.GatherAndCompare(gatherers, strings.NewReader(expected),
@@ -105,7 +107,9 @@ func TestSystemStatisticsCollectorError(t *testing.T) {
 	logger := log.NewLogfmtLogger(w)
 	collector := NewSystemStatisticsExporter(target, logger, false)
 	gatherers := setupGatherer(collector)
-	if val := testutil.CollectAndCount(collector); val != 2 {
+	if val, err := testutil.GatherAndCount(gatherers); err != nil {
+		t.Errorf("Unexpected error: %v", err)
+	} else if val != 2 {
 		t.Errorf("Unexpected collection count %d, expected 2", val)
 	}
 	if err := testutil.GatherAndCompare(gatherers, strings.NewReader(expected),

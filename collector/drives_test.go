@@ -66,7 +66,9 @@ func TestDrivesCollector(t *testing.T) {
 	logger := log.NewLogfmtLogger(w)
 	collector := NewDrivesExporter(target, logger, false)
 	gatherers := setupGatherer(collector)
-	if val := testutil.CollectAndCount(collector); val != 4 {
+	if val, err := testutil.GatherAndCount(gatherers); err != nil {
+		t.Errorf("Unexpected error: %v", err)
+	} else if val != 4 {
 		t.Errorf("Unexpected collection count %d, expected 4", val)
 	}
 	if err := testutil.GatherAndCompare(gatherers, strings.NewReader(expected),
@@ -97,7 +99,9 @@ func TestDrivesCollectorError(t *testing.T) {
 	logger := log.NewLogfmtLogger(w)
 	collector := NewDrivesExporter(target, logger, false)
 	gatherers := setupGatherer(collector)
-	if val := testutil.CollectAndCount(collector); val != 2 {
+	if val, err := testutil.GatherAndCount(gatherers); err != nil {
+		t.Errorf("Unexpected error: %v", err)
+	} else if val != 2 {
 		t.Errorf("Unexpected collection count %d, expected 2", val)
 	}
 	if err := testutil.GatherAndCompare(gatherers, strings.NewReader(expected),
@@ -134,7 +138,10 @@ func TestDrivesCollectorCache(t *testing.T) {
 	w := log.NewSyncWriter(os.Stderr)
 	logger := log.NewLogfmtLogger(w)
 	collector := NewDrivesExporter(target, logger, true)
-	if val := testutil.CollectAndCount(collector); val != 4 {
+	gatherers := setupGatherer(collector)
+	if val, err := testutil.GatherAndCount(gatherers); err != nil {
+		t.Errorf("Unexpected error: %v", err)
+	} else if val != 4 {
 		t.Errorf("Unexpected collection count %d, expected 4", val)
 	}
 	server.Close()
@@ -145,8 +152,10 @@ func TestDrivesCollectorCache(t *testing.T) {
 	baseURL, _ = url.Parse(server.URL)
 	target.BaseURL = baseURL
 	collector = NewDrivesExporter(target, logger, true)
-	gatherers := setupGatherer(collector)
-	if val := testutil.CollectAndCount(collector); val != 4 {
+	gatherers = setupGatherer(collector)
+	if val, err := testutil.GatherAndCount(gatherers); err != nil {
+		t.Errorf("Unexpected error: %v", err)
+	} else if val != 4 {
 		t.Errorf("Unexpected collection count %d, expected 4", val)
 	}
 	if err := testutil.GatherAndCompare(gatherers, strings.NewReader(expected),
