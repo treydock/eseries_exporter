@@ -17,18 +17,12 @@ import (
 	"encoding/json"
 	"fmt"
 	"strconv"
-	"sync"
 	"time"
 
 	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/log/level"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/treydock/eseries_exporter/config"
-)
-
-var (
-	drivesCache      = map[string]DrivesInventory{}
-	drivesCacheMutex = sync.RWMutex{}
 )
 
 type DrivesInventory struct {
@@ -55,23 +49,21 @@ type Tray struct {
 }
 
 type DrivesCollector struct {
-	Status   *prometheus.Desc
-	target   config.Target
-	logger   log.Logger
-	useCache bool
+	Status *prometheus.Desc
+	target config.Target
+	logger log.Logger
 }
 
 func init() {
 	registerCollector("drives", true, NewDrivesExporter)
 }
 
-func NewDrivesExporter(target config.Target, logger log.Logger, useCache bool) Collector {
+func NewDrivesExporter(target config.Target, logger log.Logger) Collector {
 	return &DrivesCollector{
 		Status: prometheus.NewDesc(prometheus.BuildFQName(namespace, "drive", "status"),
 			"Drive status, 1=optimal 0=all other states", []string{"systemid", "tray", "slot", "status"}, nil),
-		target:   target,
-		logger:   logger,
-		useCache: useCache,
+		target: target,
+		logger: logger,
 	}
 }
 
@@ -109,42 +101,14 @@ func (c *DrivesCollector) collect() (DrivesInventory, error) {
 	var metrics DrivesInventory
 	body, err := getRequest(c.target, fmt.Sprintf("/devmgr/v2/storage-systems/%s/hardware-inventory", c.target.Name), c.logger)
 	if err != nil {
-		if c.useCache {
-			metrics = drivesReadCache(c.target.Name)
-		}
 		return metrics, err
 	}
 	err = json.Unmarshal(body, &metrics)
 	if err != nil {
-		if c.useCache {
-			metrics = drivesReadCache(c.target.Name)
-		}
 		return metrics, err
 	}
 	if len(metrics.Drives) == 0 {
-		if c.useCache {
-			metrics = drivesReadCache(c.target.Name)
-		}
 		return metrics, fmt.Errorf("No drives returned")
 	}
-	if c.useCache {
-		drivesWriteCache(c.target.Name, metrics)
-	}
 	return metrics, nil
-}
-
-func drivesReadCache(target string) DrivesInventory {
-	var metrics DrivesInventory
-	drivesCacheMutex.RLock()
-	if cache, ok := drivesCache[target]; ok {
-		metrics = cache
-	}
-	drivesCacheMutex.RUnlock()
-	return metrics
-}
-
-func drivesWriteCache(target string, metrics DrivesInventory) {
-	drivesCacheMutex.Lock()
-	drivesCache[target] = metrics
-	drivesCacheMutex.Unlock()
 }
