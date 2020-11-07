@@ -26,7 +26,6 @@ import (
 )
 
 type SystemStatistics struct {
-	ID                           string  `json:"storageSystemId"`
 	AverageReadOpSize            float64 `json:"averageReadOpSize"`
 	AverageWriteOpSize           float64 `json:"averageWriteOpSize"`
 	CacheHitBytesPercent         float64 `json:"cacheHitBytesPercent"`
@@ -85,49 +84,49 @@ func init() {
 func NewSystemStatisticsExporter(target config.Target, logger log.Logger) Collector {
 	return &SystemStatisticsCollector{
 		AverageReadOpSize: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "average_read_op_size_bytes"),
-			"System statistic averageReadOpSize", []string{"id"}, nil),
+			"System statistic averageReadOpSize", nil, nil),
 		AverageWriteOpSize: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "average_write_op_size_bytes"),
-			"System statistic averageWriteOpSize", []string{"id"}, nil),
+			"System statistic averageWriteOpSize", nil, nil),
 		CacheHitBytesPercent: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "cache_hit_bytes_percent"),
-			"System statistic CacheHitBytesPercent", []string{"id"}, nil),
+			"System statistic CacheHitBytesPercent", nil, nil),
 		CombinedHitResponseTime: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "combined_hit_response_time_seconds"),
-			"System statistic CombinedHitResponseTime", []string{"id"}, nil),
+			"System statistic CombinedHitResponseTime", nil, nil),
 		CombinedIOps: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "combined_iops"),
-			"System statistic combinedIOps", []string{"id"}, nil),
+			"System statistic combinedIOps", nil, nil),
 		CombinedResponseTime: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "combined_response_time_seconds"),
-			"System statistic combinedResponseTime", []string{"id"}, nil),
+			"System statistic combinedResponseTime", nil, nil),
 		CombinedThroughput: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "combined_throughput_bytes_per_second"),
-			"System statistic combinedThroughput", []string{"id"}, nil),
+			"System statistic combinedThroughput", nil, nil),
 		CpuAvgUtilization: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "cpu_avg_utilization"),
-			"System statistic CpuAvgUtilization", []string{"id"}, nil),
+			"System statistic CpuAvgUtilization", nil, nil),
 		DdpBytesPercent: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "ddp_bytes_percent"),
-			"System statistic DdpBytesPercent", []string{"id"}, nil),
+			"System statistic DdpBytesPercent", nil, nil),
 		FullStripeWritesBytesPercent: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "full_stripe_writes_bytes_percent"),
-			"System statistic FullStripeWritesBytesPercent", []string{"id"}, nil),
+			"System statistic FullStripeWritesBytesPercent", nil, nil),
 		MaxCpuUtilization: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "max_cpu_utilization"),
-			"System statistic MaxCpuUtilization", []string{"id"}, nil),
+			"System statistic MaxCpuUtilization", nil, nil),
 		RandomIosPercent: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "random_ios_percent"),
-			"System statistic RandomIosPercent", []string{"id"}, nil),
+			"System statistic RandomIosPercent", nil, nil),
 		ReadHitResponseTime: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "read_hit_response_time_seconds"),
-			"System statistic ReadHitResponseTime", []string{"id"}, nil),
+			"System statistic ReadHitResponseTime", nil, nil),
 		ReadIOps: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "read_iops"),
-			"System statistic readIOps", []string{"id"}, nil),
+			"System statistic readIOps", nil, nil),
 		ReadPhysicalIOps: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "read_physical_iops"),
-			"System statistic readPhysicalIOps", []string{"id"}, nil),
+			"System statistic readPhysicalIOps", nil, nil),
 		ReadResponseTime: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "read_response_time_seconds"),
-			"System statistic readResponseTime", []string{"id"}, nil),
+			"System statistic readResponseTime", nil, nil),
 		ReadThroughput: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "read_throughput_bytes_per_second"),
-			"System statistic combinedThroughput", []string{"id"}, nil),
+			"System statistic combinedThroughput", nil, nil),
 		WriteHitResponseTime: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "write_hit_response_time_seconds"),
-			"System statistic WriteHitResponseTime", []string{"id"}, nil),
+			"System statistic WriteHitResponseTime", nil, nil),
 		WriteIOps: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "write_iops"),
-			"System statistic writeIOps", []string{"id"}, nil),
+			"System statistic writeIOps", nil, nil),
 		WritePhysicalIOps: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "write_physical_iops"),
-			"System statistic writePhysicalIOps", []string{"id"}, nil),
+			"System statistic writePhysicalIOps", nil, nil),
 		WriteResponseTime: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "write_response_time_seconds"),
-			"System statistic writeResponseTime", []string{"id"}, nil),
+			"System statistic writeResponseTime", nil, nil),
 		WriteThroughput: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "write_throughput_bytes_per_second"),
-			"System statistic combinedThroughput", []string{"id"}, nil),
+			"System statistic combinedThroughput", nil, nil),
 		target: target,
 		logger: logger,
 	}
@@ -169,28 +168,28 @@ func (c *SystemStatisticsCollector) Collect(ch chan<- prometheus.Metric) {
 	}
 
 	if err == nil {
-		ch <- prometheus.MustNewConstMetric(c.AverageReadOpSize, prometheus.GaugeValue, statistics.AverageReadOpSize, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.AverageWriteOpSize, prometheus.GaugeValue, statistics.AverageWriteOpSize, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.CacheHitBytesPercent, prometheus.GaugeValue, statistics.CacheHitBytesPercent, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.CombinedHitResponseTime, prometheus.GaugeValue, statistics.CombinedHitResponseTime, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.CombinedIOps, prometheus.GaugeValue, statistics.CombinedIOps, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.CombinedResponseTime, prometheus.GaugeValue, statistics.CombinedResponseTime, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.CombinedThroughput, prometheus.GaugeValue, statistics.CombinedThroughput, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.CpuAvgUtilization, prometheus.GaugeValue, statistics.CpuAvgUtilization, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.DdpBytesPercent, prometheus.GaugeValue, statistics.DdpBytesPercent, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.FullStripeWritesBytesPercent, prometheus.GaugeValue, statistics.FullStripeWritesBytesPercent, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.MaxCpuUtilization, prometheus.GaugeValue, statistics.MaxCpuUtilization, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.RandomIosPercent, prometheus.GaugeValue, statistics.RandomIosPercent, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.ReadHitResponseTime, prometheus.GaugeValue, statistics.ReadHitResponseTime, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.ReadIOps, prometheus.GaugeValue, statistics.ReadIOps, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.ReadPhysicalIOps, prometheus.GaugeValue, statistics.ReadPhysicalIOps, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.ReadResponseTime, prometheus.GaugeValue, statistics.ReadResponseTime, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.ReadThroughput, prometheus.GaugeValue, statistics.ReadThroughput, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.WriteHitResponseTime, prometheus.GaugeValue, statistics.WriteHitResponseTime, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.WriteIOps, prometheus.GaugeValue, statistics.WriteIOps, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.WritePhysicalIOps, prometheus.GaugeValue, statistics.WritePhysicalIOps, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.WriteResponseTime, prometheus.GaugeValue, statistics.WriteResponseTime, statistics.ID)
-		ch <- prometheus.MustNewConstMetric(c.WriteThroughput, prometheus.GaugeValue, statistics.WriteThroughput, statistics.ID)
+		ch <- prometheus.MustNewConstMetric(c.AverageReadOpSize, prometheus.GaugeValue, statistics.AverageReadOpSize)
+		ch <- prometheus.MustNewConstMetric(c.AverageWriteOpSize, prometheus.GaugeValue, statistics.AverageWriteOpSize)
+		ch <- prometheus.MustNewConstMetric(c.CacheHitBytesPercent, prometheus.GaugeValue, statistics.CacheHitBytesPercent)
+		ch <- prometheus.MustNewConstMetric(c.CombinedHitResponseTime, prometheus.GaugeValue, statistics.CombinedHitResponseTime)
+		ch <- prometheus.MustNewConstMetric(c.CombinedIOps, prometheus.GaugeValue, statistics.CombinedIOps)
+		ch <- prometheus.MustNewConstMetric(c.CombinedResponseTime, prometheus.GaugeValue, statistics.CombinedResponseTime)
+		ch <- prometheus.MustNewConstMetric(c.CombinedThroughput, prometheus.GaugeValue, statistics.CombinedThroughput)
+		ch <- prometheus.MustNewConstMetric(c.CpuAvgUtilization, prometheus.GaugeValue, statistics.CpuAvgUtilization)
+		ch <- prometheus.MustNewConstMetric(c.DdpBytesPercent, prometheus.GaugeValue, statistics.DdpBytesPercent)
+		ch <- prometheus.MustNewConstMetric(c.FullStripeWritesBytesPercent, prometheus.GaugeValue, statistics.FullStripeWritesBytesPercent)
+		ch <- prometheus.MustNewConstMetric(c.MaxCpuUtilization, prometheus.GaugeValue, statistics.MaxCpuUtilization)
+		ch <- prometheus.MustNewConstMetric(c.RandomIosPercent, prometheus.GaugeValue, statistics.RandomIosPercent)
+		ch <- prometheus.MustNewConstMetric(c.ReadHitResponseTime, prometheus.GaugeValue, statistics.ReadHitResponseTime)
+		ch <- prometheus.MustNewConstMetric(c.ReadIOps, prometheus.GaugeValue, statistics.ReadIOps)
+		ch <- prometheus.MustNewConstMetric(c.ReadPhysicalIOps, prometheus.GaugeValue, statistics.ReadPhysicalIOps)
+		ch <- prometheus.MustNewConstMetric(c.ReadResponseTime, prometheus.GaugeValue, statistics.ReadResponseTime)
+		ch <- prometheus.MustNewConstMetric(c.ReadThroughput, prometheus.GaugeValue, statistics.ReadThroughput)
+		ch <- prometheus.MustNewConstMetric(c.WriteHitResponseTime, prometheus.GaugeValue, statistics.WriteHitResponseTime)
+		ch <- prometheus.MustNewConstMetric(c.WriteIOps, prometheus.GaugeValue, statistics.WriteIOps)
+		ch <- prometheus.MustNewConstMetric(c.WritePhysicalIOps, prometheus.GaugeValue, statistics.WritePhysicalIOps)
+		ch <- prometheus.MustNewConstMetric(c.WriteResponseTime, prometheus.GaugeValue, statistics.WriteResponseTime)
+		ch <- prometheus.MustNewConstMetric(c.WriteThroughput, prometheus.GaugeValue, statistics.WriteThroughput)
 	}
 
 	ch <- prometheus.MustNewConstMetric(collectError, prometheus.GaugeValue, float64(errorMetric), "system-statistics")

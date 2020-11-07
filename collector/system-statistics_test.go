@@ -47,7 +47,7 @@ func TestSystemStatisticsCollector(t *testing.T) {
 	eseries_exporter_collect_error{collector="system-statistics"} 0
 	# HELP eseries_system_average_read_op_size_bytes System statistic averageReadOpSize
 	# TYPE eseries_system_average_read_op_size_bytes gauge
-	eseries_system_average_read_op_size_bytes{id="e5660-01"} 17357.11013434037
+	eseries_system_average_read_op_size_bytes 17357.11013434037
 	`
 	server := httptest.NewServer(http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {
 		_, _ = rw.Write(fixtureData)

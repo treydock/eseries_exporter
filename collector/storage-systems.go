@@ -54,7 +54,7 @@ func init() {
 func NewStorageSystemsExporter(target config.Target, logger log.Logger) Collector {
 	return &StorageSystemsCollector{
 		Status: prometheus.NewDesc(prometheus.BuildFQName(namespace, "storage_system", "status"),
-			"Storage System status, 1=optimal 0=all other states", []string{"id", "status"}, nil),
+			"Storage System status, 1=optimal 0=all other states", []string{"status"}, nil),
 		target: target,
 		logger: logger,
 	}
@@ -80,13 +80,13 @@ func (c *StorageSystemsCollector) Collect(ch chan<- prometheus.Metric) {
 			if status == metric.Status {
 				value = 1
 			}
-			ch <- prometheus.MustNewConstMetric(c.Status, prometheus.GaugeValue, value, metric.ID, status)
+			ch <- prometheus.MustNewConstMetric(c.Status, prometheus.GaugeValue, value, status)
 		}
 		var unknown float64
 		if !sliceContains(storageSystemsStatuses, metric.Status) {
 			unknown = 1
 		}
-		ch <- prometheus.MustNewConstMetric(c.Status, prometheus.GaugeValue, unknown, metric.ID, "unknown")
+		ch <- prometheus.MustNewConstMetric(c.Status, prometheus.GaugeValue, unknown, "unknown")
 	}
 	ch <- prometheus.MustNewConstMetric(collectError, prometheus.GaugeValue, float64(errorMetric), "storage-systems")
 	ch <- prometheus.MustNewConstMetric(collectDuration, prometheus.GaugeValue, time.Since(collectTime).Seconds(), "storage-systems")
