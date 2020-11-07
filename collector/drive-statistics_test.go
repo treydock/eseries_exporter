@@ -74,7 +74,9 @@ func TestDriveStatisticsCollector(t *testing.T) {
 	logger := log.NewLogfmtLogger(w)
 	collector := NewDriveStatisticsExporter(target, logger, false)
 	gatherers := setupGatherer(collector)
-	if val := testutil.CollectAndCount(collector); val != 32 {
+	if val, err := testutil.GatherAndCount(gatherers); err != nil {
+		t.Errorf("Unexpected error: %v", err)
+	} else if val != 32 {
 		t.Errorf("Unexpected collection count %d, expected 32", val)
 	}
 	if err := testutil.GatherAndCompare(gatherers, strings.NewReader(expected),
@@ -114,7 +116,9 @@ func TestDriveStatisticsCollectorError(t *testing.T) {
 	logger := log.NewLogfmtLogger(w)
 	collector := NewDriveStatisticsExporter(target, logger, false)
 	gatherers := setupGatherer(collector)
-	if val := testutil.CollectAndCount(collector); val != 2 {
+	if val, err := testutil.GatherAndCount(gatherers); err != nil {
+		t.Errorf("Unexpected error: %v", err)
+	} else if val != 2 {
 		t.Errorf("Unexpected collection count %d, expected 2", val)
 	}
 	if err := testutil.GatherAndCompare(gatherers, strings.NewReader(expected),

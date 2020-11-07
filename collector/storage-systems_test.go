@@ -65,7 +65,9 @@ func TestStorageSystemCollector(t *testing.T) {
 	logger := log.NewLogfmtLogger(w)
 	collector := NewStorageSystemsExporter(target, logger, false)
 	gatherers := setupGatherer(collector)
-	if val := testutil.CollectAndCount(collector); val != 3 {
+	if val, err := testutil.GatherAndCount(gatherers); err != nil {
+		t.Errorf("Unexpected error: %v", err)
+	} else if val != 3 {
 		t.Errorf("Unexpected collection count %d, expected 3", val)
 	}
 	if err := testutil.GatherAndCompare(gatherers, strings.NewReader(expected),
@@ -96,7 +98,9 @@ func TestStorageSystemCollectorError(t *testing.T) {
 	logger := log.NewLogfmtLogger(w)
 	collector := NewStorageSystemsExporter(target, logger, false)
 	gatherers := setupGatherer(collector)
-	if val := testutil.CollectAndCount(collector); val != 2 {
+	if val, err := testutil.GatherAndCount(gatherers); err != nil {
+		t.Errorf("Unexpected error: %v", err)
+	} else if val != 2 {
 		t.Errorf("Unexpected collection count %d, expected 2", val)
 	}
 	if err := testutil.GatherAndCompare(gatherers, strings.NewReader(expected),
@@ -132,7 +136,10 @@ func TestStorageSystemCollectorCache(t *testing.T) {
 	w := log.NewSyncWriter(os.Stderr)
 	logger := log.NewLogfmtLogger(w)
 	collector := NewStorageSystemsExporter(target, logger, true)
-	if val := testutil.CollectAndCount(collector); val != 3 {
+	gatherers := setupGatherer(collector)
+	if val, err := testutil.GatherAndCount(gatherers); err != nil {
+		t.Errorf("Unexpected error: %v", err)
+	} else if val != 3 {
 		t.Errorf("Unexpected collection count %d, expected 3", val)
 	}
 	server.Close()
@@ -143,8 +150,10 @@ func TestStorageSystemCollectorCache(t *testing.T) {
 	baseURL, _ = url.Parse(server.URL)
 	target.BaseURL = baseURL
 	collector = NewStorageSystemsExporter(target, logger, true)
-	gatherers := setupGatherer(collector)
-	if val := testutil.CollectAndCount(collector); val != 3 {
+	gatherers = setupGatherer(collector)
+	if val, err := testutil.GatherAndCount(gatherers); err != nil {
+		t.Errorf("Unexpected error: %v", err)
+	} else if val != 3 {
 		t.Errorf("Unexpected collection count %d, expected 3", val)
 	}
 	if err := testutil.GatherAndCompare(gatherers, strings.NewReader(expected),
