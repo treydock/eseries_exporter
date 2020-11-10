@@ -29,6 +29,8 @@ type SystemStatistics struct {
 	AverageWriteOpSize      float64 `json:"averageWriteOpSize"`
 	CombinedHitResponseTime float64 `json:"combinedHitResponseTime"`
 	CombinedResponseTime    float64 `json:"combinedResponseTime"`
+	CpuAvgUtilization       float64 `json:"cpuAvgUtilization"`
+	MaxCpuUtilization       float64 `json:"maxCpuUtilization"`
 	ReadHitResponseTime     float64 `json:"readHitResponseTime"`
 	ReadPhysicalIOps        float64 `json:"readPhysicalIOps"`
 	ReadResponseTime        float64 `json:"readResponseTime"`
@@ -42,6 +44,8 @@ type SystemStatisticsCollector struct {
 	AverageWriteOpSize      *prometheus.Desc
 	CombinedHitResponseTime *prometheus.Desc
 	CombinedResponseTime    *prometheus.Desc
+	CpuAvgUtilization       *prometheus.Desc
+	MaxCpuUtilization       *prometheus.Desc
 	ReadHitResponseTime     *prometheus.Desc
 	ReadPhysicalIOps        *prometheus.Desc
 	ReadResponseTime        *prometheus.Desc
@@ -66,6 +70,10 @@ func NewSystemStatisticsExporter(target config.Target, logger log.Logger) Collec
 			"System statistic CombinedHitResponseTime", nil, nil),
 		CombinedResponseTime: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "combined_response_time_seconds"),
 			"System statistic combinedResponseTime", nil, nil),
+		CpuAvgUtilization: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "cpu_avg_utilization"),
+			"System statistic CpuAvgUtilization", nil, nil),
+		MaxCpuUtilization: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "max_cpu_utilization"),
+			"System statistic MaxCpuUtilization", nil, nil),
 		ReadHitResponseTime: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "read_hit_response_time_seconds"),
 			"System statistic ReadHitResponseTime", nil, nil),
 		ReadPhysicalIOps: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "read_physical_iops"),
@@ -88,6 +96,8 @@ func (c *SystemStatisticsCollector) Describe(ch chan<- *prometheus.Desc) {
 	ch <- c.AverageWriteOpSize
 	ch <- c.CombinedHitResponseTime
 	ch <- c.CombinedResponseTime
+	ch <- c.CpuAvgUtilization
+	ch <- c.MaxCpuUtilization
 	ch <- c.ReadHitResponseTime
 	ch <- c.ReadPhysicalIOps
 	ch <- c.ReadResponseTime
@@ -111,6 +121,8 @@ func (c *SystemStatisticsCollector) Collect(ch chan<- prometheus.Metric) {
 		ch <- prometheus.MustNewConstMetric(c.AverageWriteOpSize, prometheus.GaugeValue, statistics.AverageWriteOpSize)
 		ch <- prometheus.MustNewConstMetric(c.CombinedHitResponseTime, prometheus.GaugeValue, statistics.CombinedHitResponseTime)
 		ch <- prometheus.MustNewConstMetric(c.CombinedResponseTime, prometheus.GaugeValue, statistics.CombinedResponseTime)
+		ch <- prometheus.MustNewConstMetric(c.CpuAvgUtilization, prometheus.GaugeValue, statistics.CpuAvgUtilization)
+		ch <- prometheus.MustNewConstMetric(c.MaxCpuUtilization, prometheus.GaugeValue, statistics.MaxCpuUtilization)
 		ch <- prometheus.MustNewConstMetric(c.ReadHitResponseTime, prometheus.GaugeValue, statistics.ReadHitResponseTime)
 		ch <- prometheus.MustNewConstMetric(c.ReadPhysicalIOps, prometheus.GaugeValue, statistics.ReadPhysicalIOps)
 		ch <- prometheus.MustNewConstMetric(c.ReadResponseTime, prometheus.GaugeValue, statistics.ReadResponseTime)

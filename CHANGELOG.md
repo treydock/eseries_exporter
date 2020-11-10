@@ -12,10 +12,8 @@
 ** eseries_system_read_ops, eseries_system_read_iops, eseries_system_read_throughput_mb_per_second
 ** eseries_system_write_ops, eseries_system_write_iops, eseries_system_write_throughput_mb_per_second
 ** eseries_system_cache_hit_bytes_percent, eseries_system_combined_iops
-** eseries_system_combined_throughput_mb_per_second
-** eseries_system_cpu_avg_utilization, eseries_system_ddp_bytes_percent
-** eseries_system_full_stripe_writes_bytes_percent, eseries_system_max_cpu_utilization
-** eseries_system_random_ios_percent
+** eseries_system_combined_throughput_mb_per_second, eseries_system_ddp_bytes_percent
+** eseries_system_full_stripe_writes_bytes_percent, eseries_system_random_ios_percent
 * Rename metrics to change units of measurement
 ** eseries_drive_combined_response_time_milliseconds to eseries_drive_combined_response_time_seconds
 ** eseries_drive_read_response_time_milliseconds to eseries_drive_read_response_time_seconds
