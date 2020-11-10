@@ -37,7 +37,11 @@ import (
 )
 
 func TestDriveStatisticsCollector(t *testing.T) {
-	fixtureData, err := ioutil.ReadFile("testdata/drive-statistics.json")
+	analyzedDriveData, err := ioutil.ReadFile("testdata/analysed-drive-statistics.json")
+	if err != nil {
+		t.Fatalf("Error loading fixture data: %s", err.Error())
+	}
+	driveData, err := ioutil.ReadFile("testdata/drive-statistics.json")
 	if err != nil {
 		t.Fatalf("Error loading fixture data: %s", err.Error())
 	}
@@ -57,8 +61,10 @@ func TestDriveStatisticsCollector(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {
 		if strings.HasSuffix(req.URL.Path, "hardware-inventory") {
 			_, _ = rw.Write(inventoryData)
+		} else if strings.HasSuffix(req.URL.Path, "analysed-drive-statistics") {
+			_, _ = rw.Write(analyzedDriveData)
 		} else {
-			_, _ = rw.Write(fixtureData)
+			_, _ = rw.Write(driveData)
 		}
 	}))
 	defer server.Close()
@@ -76,8 +82,8 @@ func TestDriveStatisticsCollector(t *testing.T) {
 	gatherers := setupGatherer(collector)
 	if val, err := testutil.GatherAndCount(gatherers); err != nil {
 		t.Errorf("Unexpected error: %v", err)
-	} else if val != 28 {
-		t.Errorf("Unexpected collection count %d, expected 28", val)
+	} else if val != 48 {
+		t.Errorf("Unexpected collection count %d, expected 48", val)
 	}
 	if err := testutil.GatherAndCompare(gatherers, strings.NewReader(expected),
 		/*
