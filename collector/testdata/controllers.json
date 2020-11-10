@@ -1,0 +1,2342 @@
+{
+  "controllers": [
+    {
+      "active": true,
+      "quiesced": false,
+      "status": "optimal",
+      "controllerRef": "070000000000000000000002",
+      "physicalLocation": {
+        "trayRef": "0E00000000000000000000000000000000000000",
+        "slot": 2,
+        "locationParent": {
+          "refType": "generic",
+          "controllerRef": null,
+          "symbolRef": "0000000000000000000000000000000000000000",
+          "typedReference": null
+        },
+        "locationPosition": 2,
+        "label": "B"
+      },
+      "manufacturer": "NETAPP  ",
+      "manufacturerDate": "1438387200",
+      "appVersion": "08.40.60.01",
+      "bootVersion": "08.40.60.01",
+      "productID": "INF-01-00       ",
+      "productRevLevel": "0840",
+      "serialNumber": "SERIAL1      ",
+      "boardID": "5600",
+      "cacheMemorySize": 8192,
+      "processorMemorySize": 2011,
+      "hostInterfaces": [
+        {
+          "interfaceType": "fc",
+          "fibre": {
+            "channel": 1,
+            "loopID": 126,
+            "speed": 1600,
+            "hardAddress": 8,
+            "nodeName": "20020080E543A2C4",
+            "portName": "20130080E543A2C4",
+            "portId": "000000",
+            "topology": "ptp",
+            "part": "QL-EP8324       ",
+            "revision": 2,
+            "chanMiswire": false,
+            "esmMiswire": false,
+            "linkStatus": "up",
+            "isDegraded": false,
+            "speedControl": "auto",
+            "maxSpeed": 1600,
+            "speedNegError": false,
+            "reserved1": "000000000000000000000000",
+            "reserved2": "",
+            "ddsChannelState": 0,
+            "ddsStateReason": 0,
+            "ddsStateWho": 0,
+            "isLocal": true,
+            "channelPorts": [],
+            "currentInterfaceSpeed": "speed16gig",
+            "maximumInterfaceSpeed": "speed16gig",
+            "interfaceRef": "2202070000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "isTrunkCapable": false,
+            "trunkMiswire": false,
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "1640000000",
+            "bidirectionalMaxRate": "3000000000",
+            "fc4Types": null,
+            "controllerId": "070000000000000000000002",
+            "interfaceId": "2202070000000000000000000000000000000000",
+            "addressId": "20130080E543A2C4",
+            "niceAddressId": "20:13:00:80:E5:43:A2:C4",
+            "id": "2202070000000000000000000000000000000000"
+          },
+          "ib": null,
+          "iscsi": null,
+          "sas": null,
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        },
+        {
+          "interfaceType": "fc",
+          "fibre": {
+            "channel": 2,
+            "loopID": 126,
+            "speed": 1600,
+            "hardAddress": 9,
+            "nodeName": "20020080E543A2C4",
+            "portName": "20230080E543A2C4",
+            "portId": "000000",
+            "topology": "ptp",
+            "part": "QL-EP8324       ",
+            "revision": 2,
+            "chanMiswire": false,
+            "esmMiswire": false,
+            "linkStatus": "up",
+            "isDegraded": false,
+            "speedControl": "auto",
+            "maxSpeed": 1600,
+            "speedNegError": false,
+            "reserved1": "000000000000000000000000",
+            "reserved2": "",
+            "ddsChannelState": 0,
+            "ddsStateReason": 0,
+            "ddsStateWho": 0,
+            "isLocal": true,
+            "channelPorts": [],
+            "currentInterfaceSpeed": "speed16gig",
+            "maximumInterfaceSpeed": "speed16gig",
+            "interfaceRef": "2202080000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "isTrunkCapable": false,
+            "trunkMiswire": false,
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "1640000000",
+            "bidirectionalMaxRate": "3000000000",
+            "fc4Types": null,
+            "controllerId": "070000000000000000000002",
+            "interfaceId": "2202080000000000000000000000000000000000",
+            "addressId": "20230080E543A2C4",
+            "niceAddressId": "20:23:00:80:E5:43:A2:C4",
+            "id": "2202080000000000000000000000000000000000"
+          },
+          "ib": null,
+          "iscsi": null,
+          "sas": null,
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        },
+        {
+          "interfaceType": "fc",
+          "fibre": {
+            "channel": 3,
+            "loopID": 255,
+            "speed": 0,
+            "hardAddress": 10,
+            "nodeName": "20020080E543A2C4",
+            "portName": "20330080E543A2C4",
+            "portId": "FFFFFF",
+            "topology": "unknown",
+            "part": "QL-EP8324       ",
+            "revision": 2,
+            "chanMiswire": false,
+            "esmMiswire": false,
+            "linkStatus": "down",
+            "isDegraded": false,
+            "speedControl": "auto",
+            "maxSpeed": 1600,
+            "speedNegError": false,
+            "reserved1": "000000000000000000000000",
+            "reserved2": "",
+            "ddsChannelState": 0,
+            "ddsStateReason": 0,
+            "ddsStateWho": 0,
+            "isLocal": true,
+            "channelPorts": [],
+            "currentInterfaceSpeed": "speedUnknown",
+            "maximumInterfaceSpeed": "speed16gig",
+            "interfaceRef": "2202090000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "isTrunkCapable": false,
+            "trunkMiswire": false,
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "0",
+            "bidirectionalMaxRate": "0",
+            "fc4Types": null,
+            "controllerId": "070000000000000000000002",
+            "interfaceId": "2202090000000000000000000000000000000000",
+            "addressId": "20330080E543A2C4",
+            "niceAddressId": "20:33:00:80:E5:43:A2:C4",
+            "id": "2202090000000000000000000000000000000000"
+          },
+          "ib": null,
+          "iscsi": null,
+          "sas": null,
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        },
+        {
+          "interfaceType": "fc",
+          "fibre": {
+            "channel": 4,
+            "loopID": 255,
+            "speed": 0,
+            "hardAddress": 11,
+            "nodeName": "20020080E543A2C4",
+            "portName": "20430080E543A2C4",
+            "portId": "FFFFFF",
+            "topology": "unknown",
+            "part": "QL-EP8324       ",
+            "revision": 2,
+            "chanMiswire": false,
+            "esmMiswire": false,
+            "linkStatus": "down",
+            "isDegraded": false,
+            "speedControl": "auto",
+            "maxSpeed": 1600,
+            "speedNegError": false,
+            "reserved1": "000000000000000000000000",
+            "reserved2": "",
+            "ddsChannelState": 0,
+            "ddsStateReason": 0,
+            "ddsStateWho": 0,
+            "isLocal": true,
+            "channelPorts": [],
+            "currentInterfaceSpeed": "speedUnknown",
+            "maximumInterfaceSpeed": "speed16gig",
+            "interfaceRef": "22020A0000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "isTrunkCapable": false,
+            "trunkMiswire": false,
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "0",
+            "bidirectionalMaxRate": "0",
+            "fc4Types": null,
+            "controllerId": "070000000000000000000002",
+            "interfaceId": "22020A0000000000000000000000000000000000",
+            "addressId": "20430080E543A2C4",
+            "niceAddressId": "20:43:00:80:E5:43:A2:C4",
+            "id": "22020A0000000000000000000000000000000000"
+          },
+          "ib": null,
+          "iscsi": null,
+          "sas": null,
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        }
+      ],
+      "driveInterfaces": [
+        {
+          "interfaceType": "sas",
+          "fibre": null,
+          "ib": null,
+          "iscsi": null,
+          "sas": {
+            "channel": 1,
+            "currentInterfaceSpeed": "speed6gig",
+            "maximumInterfaceSpeed": "speed6gig",
+            "part": "LSISAS2308",
+            "revision": 223038464,
+            "isDegraded": false,
+            "iocPort": {
+              "parent": {
+                "type": "controller",
+                "controller": "070000000000000000000002",
+                "drive": null,
+                "expander": null,
+                "hostBoardRef": null
+              },
+              "attachedDevice": {
+                "channel": 1,
+                "channelType": "driveside",
+                "sasAttachedDeviceData": {
+                  "type": "expander",
+                  "alternateController": null,
+                  "drive": null,
+                  "expander": "200050080E5209C1A00000000001000000000000",
+                  "remoteHostPortAddress": null,
+                  "localController": null,
+                  "physicalLocation": null
+                }
+              },
+              "state": "optimal",
+              "miswireType": "none",
+              "channelPortRef": "1F01020001010000000000000000000000000000",
+              "sasPhys": [
+                {
+                  "phyIdentifier": 4,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 5,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 6,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 7,
+                  "isOperational": true
+                }
+              ],
+              "portTypeData": {
+                "portType": "endDevice",
+                "portIdentifier": "50080E543A1B0004",
+                "routingType": "__UNDEFINED"
+              },
+              "portMode": "externalOut",
+              "domainNumber": 1,
+              "attachedChannelPortRef": "0000000000000000000000000000000000000000",
+              "discoveryStatus": 0
+            },
+            "interfaceRef": "2202000000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "2200000000",
+            "bidirectionalMaxRate": "4200000000",
+            "controllerId": null,
+            "interfaceId": "2202000000000000000000000000000000000000",
+            "addressId": "50080E543A1B0004",
+            "niceAddressId": "50080E543A1B0004",
+            "basePortAddress": "50080E543A1B000",
+            "id": "2202000000000000000000000000000000000000"
+          },
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        },
+        {
+          "interfaceType": "sas",
+          "fibre": null,
+          "ib": null,
+          "iscsi": null,
+          "sas": {
+            "channel": 2,
+            "currentInterfaceSpeed": "speed6gig",
+            "maximumInterfaceSpeed": "speed6gig",
+            "part": "LSISAS2308",
+            "revision": 223038464,
+            "isDegraded": false,
+            "iocPort": {
+              "parent": {
+                "type": "controller",
+                "controller": "070000000000000000000002",
+                "drive": null,
+                "expander": null,
+                "hostBoardRef": null
+              },
+              "attachedDevice": {
+                "channel": 2,
+                "channelType": "driveside",
+                "sasAttachedDeviceData": {
+                  "type": "expander",
+                  "alternateController": null,
+                  "drive": null,
+                  "expander": "200050080E520BA7D00001010001000000000000",
+                  "remoteHostPortAddress": null,
+                  "localController": null,
+                  "physicalLocation": null
+                }
+              },
+              "state": "optimal",
+              "miswireType": "none",
+              "channelPortRef": "1F01020002010000000000000000000000000000",
+              "sasPhys": [
+                {
+                  "phyIdentifier": 0,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 1,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 2,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 3,
+                  "isOperational": true
+                }
+              ],
+              "portTypeData": {
+                "portType": "endDevice",
+                "portIdentifier": "50080E543A1B0010",
+                "routingType": "__UNDEFINED"
+              },
+              "portMode": "externalOut",
+              "domainNumber": 2,
+              "attachedChannelPortRef": "0000000000000000000000000000000000000000",
+              "discoveryStatus": 0
+            },
+            "interfaceRef": "2202010000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "2200000000",
+            "bidirectionalMaxRate": "4200000000",
+            "controllerId": null,
+            "interfaceId": "2202010000000000000000000000000000000000",
+            "addressId": "50080E543A1B0010",
+            "niceAddressId": "50080E543A1B0010",
+            "basePortAddress": "50080E543A1B001",
+            "id": "2202010000000000000000000000000000000000"
+          },
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        },
+        {
+          "interfaceType": "sas",
+          "fibre": null,
+          "ib": null,
+          "iscsi": null,
+          "sas": {
+            "channel": 3,
+            "currentInterfaceSpeed": "speed6gig",
+            "maximumInterfaceSpeed": "speed6gig",
+            "part": "LSISAS2308",
+            "revision": 223038464,
+            "isDegraded": false,
+            "iocPort": {
+              "parent": {
+                "type": "controller",
+                "controller": "070000000000000000000002",
+                "drive": null,
+                "expander": null,
+                "hostBoardRef": null
+              },
+              "attachedDevice": {
+                "channel": 3,
+                "channelType": "driveside",
+                "sasAttachedDeviceData": {
+                  "type": "expander",
+                  "alternateController": null,
+                  "drive": null,
+                  "expander": "2000000000000000000002630001000000000000",
+                  "remoteHostPortAddress": null,
+                  "localController": null,
+                  "physicalLocation": null
+                }
+              },
+              "state": "optimal",
+              "miswireType": "none",
+              "channelPortRef": "1F01000003010000000000000000000000000000",
+              "sasPhys": [
+                {
+                  "phyIdentifier": 0,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 1,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 2,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 3,
+                  "isOperational": true
+                }
+              ],
+              "portTypeData": {
+                "portType": "endDevice",
+                "portIdentifier": "50080E543A1B0020",
+                "routingType": "__UNDEFINED"
+              },
+              "portMode": "internal",
+              "domainNumber": 3,
+              "attachedChannelPortRef": "0000000000000000000000000000000000000000",
+              "discoveryStatus": 0
+            },
+            "interfaceRef": "2202020000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "2200000000",
+            "bidirectionalMaxRate": "4200000000",
+            "controllerId": null,
+            "interfaceId": "2202020000000000000000000000000000000000",
+            "addressId": "50080E543A1B0020",
+            "niceAddressId": "50080E543A1B0020",
+            "basePortAddress": "50080E543A1B002",
+            "id": "2202020000000000000000000000000000000000"
+          },
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        },
+        {
+          "interfaceType": "sas",
+          "fibre": null,
+          "ib": null,
+          "iscsi": null,
+          "sas": {
+            "channel": 4,
+            "currentInterfaceSpeed": "speed6gig",
+            "maximumInterfaceSpeed": "speed6gig",
+            "part": "LSISAS2308",
+            "revision": 223038464,
+            "isDegraded": false,
+            "iocPort": {
+              "parent": {
+                "type": "controller",
+                "controller": "070000000000000000000002",
+                "drive": null,
+                "expander": null,
+                "hostBoardRef": null
+              },
+              "attachedDevice": {
+                "channel": 4,
+                "channelType": "driveside",
+                "sasAttachedDeviceData": {
+                  "type": "expander",
+                  "alternateController": null,
+                  "drive": null,
+                  "expander": "2000000000000000000003630001000000000000",
+                  "remoteHostPortAddress": null,
+                  "localController": null,
+                  "physicalLocation": null
+                }
+              },
+              "state": "optimal",
+              "miswireType": "none",
+              "channelPortRef": "1F01000004010000000000000000000000000000",
+              "sasPhys": [
+                {
+                  "phyIdentifier": 4,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 5,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 6,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 7,
+                  "isOperational": true
+                }
+              ],
+              "portTypeData": {
+                "portType": "endDevice",
+                "portIdentifier": "50080E543A1B0014",
+                "routingType": "__UNDEFINED"
+              },
+              "portMode": "internal",
+              "domainNumber": 4,
+              "attachedChannelPortRef": "0000000000000000000000000000000000000000",
+              "discoveryStatus": 0
+            },
+            "interfaceRef": "2202030000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "2200000000",
+            "bidirectionalMaxRate": "4200000000",
+            "controllerId": null,
+            "interfaceId": "2202030000000000000000000000000000000000",
+            "addressId": "50080E543A1B0014",
+            "niceAddressId": "50080E543A1B0014",
+            "basePortAddress": "50080E543A1B001",
+            "id": "2202030000000000000000000000000000000000"
+          },
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        },
+        {
+          "interfaceType": "sas",
+          "fibre": null,
+          "ib": null,
+          "iscsi": null,
+          "sas": {
+            "channel": 5,
+            "currentInterfaceSpeed": "speed6gig",
+            "maximumInterfaceSpeed": "speed6gig",
+            "part": "LSISAS2308",
+            "revision": 223038464,
+            "isDegraded": false,
+            "iocPort": {
+              "parent": {
+                "type": "controller",
+                "controller": "070000000000000000000002",
+                "drive": null,
+                "expander": null,
+                "hostBoardRef": null
+              },
+              "attachedDevice": {
+                "channel": 5,
+                "channelType": "driveside",
+                "sasAttachedDeviceData": {
+                  "type": "expander",
+                  "alternateController": null,
+                  "drive": null,
+                  "expander": "2000000000000000000003630001000000000000",
+                  "remoteHostPortAddress": null,
+                  "localController": null,
+                  "physicalLocation": null
+                }
+              },
+              "state": "optimal",
+              "miswireType": "none",
+              "channelPortRef": "1F01000005010000000000000000000000000000",
+              "sasPhys": [
+                {
+                  "phyIdentifier": 0,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 1,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 2,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 3,
+                  "isOperational": true
+                }
+              ],
+              "portTypeData": {
+                "portType": "endDevice",
+                "portIdentifier": "50080E543A1B0000",
+                "routingType": "__UNDEFINED"
+              },
+              "portMode": "internal",
+              "domainNumber": 4,
+              "attachedChannelPortRef": "0000000000000000000000000000000000000000",
+              "discoveryStatus": 0
+            },
+            "interfaceRef": "2202040000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "2200000000",
+            "bidirectionalMaxRate": "4200000000",
+            "controllerId": null,
+            "interfaceId": "2202040000000000000000000000000000000000",
+            "addressId": "50080E543A1B0000",
+            "niceAddressId": "50080E543A1B0000",
+            "basePortAddress": "50080E543A1B000",
+            "id": "2202040000000000000000000000000000000000"
+          },
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        },
+        {
+          "interfaceType": "sas",
+          "fibre": null,
+          "ib": null,
+          "iscsi": null,
+          "sas": {
+            "channel": 6,
+            "currentInterfaceSpeed": "speed6gig",
+            "maximumInterfaceSpeed": "speed6gig",
+            "part": "LSISAS2308",
+            "revision": 223038464,
+            "isDegraded": false,
+            "iocPort": {
+              "parent": {
+                "type": "controller",
+                "controller": "070000000000000000000002",
+                "drive": null,
+                "expander": null,
+                "hostBoardRef": null
+              },
+              "attachedDevice": {
+                "channel": 6,
+                "channelType": "driveside",
+                "sasAttachedDeviceData": {
+                  "type": "alternateController",
+                  "alternateController": "000000000000000000000000",
+                  "drive": null,
+                  "expander": null,
+                  "remoteHostPortAddress": null,
+                  "localController": null,
+                  "physicalLocation": null
+                }
+              },
+              "state": "optimal",
+              "miswireType": "none",
+              "channelPortRef": "1F01000006010000000000000000000000000000",
+              "sasPhys": [
+                {
+                  "phyIdentifier": 4,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 5,
+                  "isOperational": true
+                }
+              ],
+              "portTypeData": {
+                "portType": "endDevice",
+                "portIdentifier": "50080E543A1B0024",
+                "routingType": "__UNDEFINED"
+              },
+              "portMode": "internal",
+              "domainNumber": 6,
+              "attachedChannelPortRef": "0000000000000000000000000000000000000000",
+              "discoveryStatus": 0
+            },
+            "interfaceRef": "2202050000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "2200000000",
+            "bidirectionalMaxRate": "4200000000",
+            "controllerId": null,
+            "interfaceId": "2202050000000000000000000000000000000000",
+            "addressId": "50080E543A1B0024",
+            "niceAddressId": "50080E543A1B0024",
+            "basePortAddress": "50080E543A1B002",
+            "id": "2202050000000000000000000000000000000000"
+          },
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        },
+        {
+          "interfaceType": "sas",
+          "fibre": null,
+          "ib": null,
+          "iscsi": null,
+          "sas": {
+            "channel": 7,
+            "currentInterfaceSpeed": "speed6gig",
+            "maximumInterfaceSpeed": "speed6gig",
+            "part": "LSISAS2308",
+            "revision": 223038464,
+            "isDegraded": false,
+            "iocPort": {
+              "parent": {
+                "type": "controller",
+                "controller": "070000000000000000000002",
+                "drive": null,
+                "expander": null,
+                "hostBoardRef": null
+              },
+              "attachedDevice": {
+                "channel": 7,
+                "channelType": "driveside",
+                "sasAttachedDeviceData": {
+                  "type": "alternateController",
+                  "alternateController": "000000000000000000000000",
+                  "drive": null,
+                  "expander": null,
+                  "remoteHostPortAddress": null,
+                  "localController": null,
+                  "physicalLocation": null
+                }
+              },
+              "state": "optimal",
+              "miswireType": "none",
+              "channelPortRef": "1F01000007010000000000000000000000000000",
+              "sasPhys": [
+                {
+                  "phyIdentifier": 6,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 7,
+                  "isOperational": true
+                }
+              ],
+              "portTypeData": {
+                "portType": "endDevice",
+                "portIdentifier": "50080E543A1B0026",
+                "routingType": "__UNDEFINED"
+              },
+              "portMode": "internal",
+              "domainNumber": 7,
+              "attachedChannelPortRef": "0000000000000000000000000000000000000000",
+              "discoveryStatus": 0
+            },
+            "interfaceRef": "2202060000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "2200000000",
+            "bidirectionalMaxRate": "4200000000",
+            "controllerId": null,
+            "interfaceId": "2202060000000000000000000000000000000000",
+            "addressId": "50080E543A1B0026",
+            "niceAddressId": "50080E543A1B0026",
+            "basePortAddress": "50080E543A1B002",
+            "id": "2202060000000000000000000000000000000000"
+          },
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        }
+      ],
+      "netInterfaces": [
+        {
+          "interfaceType": "ethernet",
+          "ethernet": {
+            "interfaceName": "gei0",
+            "channel": 1,
+            "speed": 1000,
+            "ip": 168428134,
+            "alias": "target",
+            "macAddr": "0080E543A1B0",
+            "gatewayIp": 168427774,
+            "subnetMask": -65536,
+            "bootpUsed": false,
+            "rloginEnabled": false,
+            "reserved1": "0000000000000000",
+            "setupError": false,
+            "reserved2": "",
+            "interfaceRef": "2800070000000000000000000002000000000000",
+            "linkStatus": "up",
+            "ipv4Enabled": true,
+            "ipv4Address": "10.10.2.102",
+            "ipv4SubnetMask": "255.255.0.0",
+            "ipv4AddressConfigMethod": "configStatic",
+            "ipv6Enabled": false,
+            "ipv6LocalAddress": {
+              "address": "00000000000000000000000000000000",
+              "addressState": {
+                "addressType": "typeInterface",
+                "interfaceAddressState": "configured",
+                "routerAddressState": "__UNDEFINED"
+              }
+            },
+            "ipv6PortStaticRoutableAddress": {
+              "address": "00000000000000000000000000000000",
+              "addressState": {
+                "addressType": "typeInterface",
+                "interfaceAddressState": "__UNDEFINED",
+                "routerAddressState": "__UNDEFINED"
+              }
+            },
+            "ipv6PortRoutableAddresses": [],
+            "ipv6AddressConfigMethod": "configStatic",
+            "fullDuplex": true,
+            "supportedSpeedSettings": [
+              "speedAutoNegotiated",
+              "speed10MbitHalfDuplex",
+              "speed10MbitFullDuplex",
+              "speed100MbitHalfDuplex",
+              "speed100MbitFullDuplex",
+              "speed1000MbitFullDuplex"
+            ],
+            "configuredSpeedSetting": "speedAutoNegotiated",
+            "currentSpeed": "speed1gig",
+            "physicalLocation": {
+              "trayRef": "0E00000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "controller",
+                "controllerRef": "070000000000000000000002",
+                "symbolRef": null,
+                "typedReference": null
+              },
+              "locationPosition": 1,
+              "label": "Port 1"
+            },
+            "ipv4GatewayAddress": "10.10.0.254",
+            "controllerRef": "070000000000000000000002",
+            "controllerSlot": 2,
+            "dnsProperties": {
+              "acquisitionProperties": {
+                "dnsAcquisitionType": "dhcp",
+                "dnsServers": null
+              },
+              "dhcpAcquiredDnsServers": []
+            },
+            "ntpProperties": {
+              "acquisitionProperties": {
+                "ntpAcquisitionType": "disabled",
+                "ntpServers": null
+              },
+              "dhcpAcquiredNtpServers": []
+            },
+            "id": "2800070000000000000000000002000000000000"
+          }
+        },
+        {
+          "interfaceType": "ethernet",
+          "ethernet": {
+            "interfaceName": "gei1",
+            "channel": 2,
+            "speed": 0,
+            "ip": 0,
+            "alias": "target",
+            "macAddr": "0080E543A1B1",
+            "gatewayIp": 168427774,
+            "subnetMask": 0,
+            "bootpUsed": false,
+            "rloginEnabled": false,
+            "reserved1": "0000000000000000",
+            "setupError": false,
+            "reserved2": "",
+            "interfaceRef": "2801070000000000000000000002000000000000",
+            "linkStatus": "down",
+            "ipv4Enabled": true,
+            "ipv4Address": "0.0.0.0",
+            "ipv4SubnetMask": "0.0.0.0",
+            "ipv4AddressConfigMethod": "configDhcp",
+            "ipv6Enabled": true,
+            "ipv6LocalAddress": {
+              "address": "00000000000000000000000000000000",
+              "addressState": {
+                "addressType": "typeInterface",
+                "interfaceAddressState": "configured",
+                "routerAddressState": "__UNDEFINED"
+              }
+            },
+            "ipv6PortStaticRoutableAddress": {
+              "address": "00000000000000000000000000000000",
+              "addressState": {
+                "addressType": "typeInterface",
+                "interfaceAddressState": "__UNDEFINED",
+                "routerAddressState": "__UNDEFINED"
+              }
+            },
+            "ipv6PortRoutableAddresses": [],
+            "ipv6AddressConfigMethod": "configStateless",
+            "fullDuplex": false,
+            "supportedSpeedSettings": [
+              "speedAutoNegotiated",
+              "speed10MbitHalfDuplex",
+              "speed10MbitFullDuplex",
+              "speed100MbitHalfDuplex",
+              "speed100MbitFullDuplex",
+              "speed1000MbitFullDuplex"
+            ],
+            "configuredSpeedSetting": "speedAutoNegotiated",
+            "currentSpeed": "speedUnknown",
+            "physicalLocation": {
+              "trayRef": "0E00000000000000000000000000000000000000",
+              "slot": 1,
+              "locationParent": {
+                "refType": "controller",
+                "controllerRef": "070000000000000000000002",
+                "symbolRef": null,
+                "typedReference": null
+              },
+              "locationPosition": 2,
+              "label": "Port 2"
+            },
+            "ipv4GatewayAddress": "10.10.0.254",
+            "controllerRef": "070000000000000000000002",
+            "controllerSlot": 2,
+            "dnsProperties": {
+              "acquisitionProperties": {
+                "dnsAcquisitionType": "dhcp",
+                "dnsServers": null
+              },
+              "dhcpAcquiredDnsServers": []
+            },
+            "ntpProperties": {
+              "acquisitionProperties": {
+                "ntpAcquisitionType": "disabled",
+                "ntpServers": null
+              },
+              "dhcpAcquiredNtpServers": []
+            },
+            "id": "2801070000000000000000000002000000000000"
+          }
+        }
+      ],
+      "inventory": [],
+      "reserved1": "000000000000000000000000",
+      "reserved2": "",
+      "hostBoardID": "1794",
+      "physicalCacheMemorySize": 10240,
+      "readyToRemove": false,
+      "boardSubmodelID": "244",
+      "submodelSupported": true,
+      "oemPartNumber": "E-X561202A-R6",
+      "partNumber": "111-02820   ",
+      "rtrAttributes": {
+        "cruType": "dedicated",
+        "parentCru": null,
+        "rtrAttributeData": {
+          "hasReadyToRemoveIndicator": true,
+          "readyToRemove": false
+        }
+      },
+      "bootTime": "1589904213",
+      "modelName": "5600",
+      "networkSettings": {
+        "ipv4DefaultRouterAddress": "10.10.0.254",
+        "ipv6DefaultRouterAddress": {
+          "address": "FE800000000000000280E5FFFE43A1B0",
+          "addressState": {
+            "addressType": "typeInterface",
+            "interfaceAddressState": "configured",
+            "routerAddressState": "__UNDEFINED"
+          }
+        },
+        "ipv6CandidateDefaultRouterAddresses": [
+          {
+            "address": "FE800000000000000280E5FFFE43A1B0",
+            "addressState": {
+              "addressType": "typeRouter",
+              "interfaceAddressState": "__UNDEFINED",
+              "routerAddressState": "configured"
+            }
+          }
+        ],
+        "remoteAccessEnabled": false,
+        "dnsProperties": {
+          "acquisitionProperties": {
+            "dnsAcquisitionType": "dhcp",
+            "dnsServers": null
+          },
+          "dhcpAcquiredDnsServers": []
+        },
+        "ntpProperties": {
+          "acquisitionProperties": {
+            "ntpAcquisitionType": "disabled",
+            "ntpServers": null
+          },
+          "dhcpAcquiredNtpServers": []
+        }
+      },
+      "repairPolicy": {
+        "removalData": {
+          "removalMethod": "__UNDEFINED",
+          "rtrAttributes": null
+        },
+        "replacementMethod": "__UNDEFINED"
+      },
+      "flashCacheMemorySize": 520093696,
+      "ctrlIocDumpData": {
+        "iocDumpNeedsRetrieved": false,
+        "iocDumpTag": 0,
+        "timeStamp": "0"
+      },
+      "locateInProgress": false,
+      "hasTrayIdentityIndicator": false,
+      "controllerErrorMode": "notInErrorMode",
+      "codeVersions": [
+        {
+          "codeModule": "raid",
+          "versionString": "08.40.60.01"
+        }
+      ],
+      "containerServicesConfiguration": null,
+      "id": "070000000000000000000002"
+    },
+    {
+      "active": true,
+      "quiesced": false,
+      "status": "optimal",
+      "controllerRef": "070000000000000000000001",
+      "physicalLocation": {
+        "trayRef": "0E00000000000000000000000000000000000000",
+        "slot": 1,
+        "locationParent": {
+          "refType": "generic",
+          "controllerRef": null,
+          "symbolRef": "0000000000000000000000000000000000000000",
+          "typedReference": null
+        },
+        "locationPosition": 1,
+        "label": "A"
+      },
+      "manufacturer": "NETAPP  ",
+      "manufacturerDate": "1438387200",
+      "appVersion": "08.40.60.01",
+      "bootVersion": "08.40.60.01",
+      "productID": "INF-01-00       ",
+      "productRevLevel": "0840",
+      "serialNumber": "SERIAL2      ",
+      "boardID": "5600",
+      "cacheMemorySize": 8192,
+      "processorMemorySize": 2011,
+      "hostInterfaces": [
+        {
+          "interfaceType": "fc",
+          "fibre": {
+            "channel": 1,
+            "loopID": 126,
+            "speed": 1600,
+            "hardAddress": 0,
+            "nodeName": "20020080E543A2C4",
+            "portName": "20120080E543A2C4",
+            "portId": "000000",
+            "topology": "ptp",
+            "part": "QL-EP8324       ",
+            "revision": 2,
+            "chanMiswire": false,
+            "esmMiswire": false,
+            "linkStatus": "up",
+            "isDegraded": false,
+            "speedControl": "auto",
+            "maxSpeed": 1600,
+            "speedNegError": false,
+            "reserved1": "000000000000000000000000",
+            "reserved2": "",
+            "ddsChannelState": 0,
+            "ddsStateReason": 0,
+            "ddsStateWho": 1,
+            "isLocal": true,
+            "channelPorts": [],
+            "currentInterfaceSpeed": "speed16gig",
+            "maximumInterfaceSpeed": "speed16gig",
+            "interfaceRef": "2201070000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "isTrunkCapable": false,
+            "trunkMiswire": false,
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "1640000000",
+            "bidirectionalMaxRate": "3000000000",
+            "fc4Types": null,
+            "controllerId": "070000000000000000000001",
+            "interfaceId": "2201070000000000000000000000000000000000",
+            "addressId": "20120080E543A2C4",
+            "niceAddressId": "20:12:00:80:E5:43:A2:C4",
+            "id": "2201070000000000000000000000000000000000"
+          },
+          "ib": null,
+          "iscsi": null,
+          "sas": null,
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        },
+        {
+          "interfaceType": "fc",
+          "fibre": {
+            "channel": 2,
+            "loopID": 126,
+            "speed": 1600,
+            "hardAddress": 1,
+            "nodeName": "20020080E543A2C4",
+            "portName": "20220080E543A2C4",
+            "portId": "000000",
+            "topology": "ptp",
+            "part": "QL-EP8324       ",
+            "revision": 2,
+            "chanMiswire": false,
+            "esmMiswire": false,
+            "linkStatus": "up",
+            "isDegraded": false,
+            "speedControl": "auto",
+            "maxSpeed": 1600,
+            "speedNegError": false,
+            "reserved1": "000000000000000000000000",
+            "reserved2": "",
+            "ddsChannelState": 0,
+            "ddsStateReason": 0,
+            "ddsStateWho": 1,
+            "isLocal": true,
+            "channelPorts": [],
+            "currentInterfaceSpeed": "speed16gig",
+            "maximumInterfaceSpeed": "speed16gig",
+            "interfaceRef": "2201080000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "isTrunkCapable": false,
+            "trunkMiswire": false,
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "1640000000",
+            "bidirectionalMaxRate": "3000000000",
+            "fc4Types": null,
+            "controllerId": "070000000000000000000001",
+            "interfaceId": "2201080000000000000000000000000000000000",
+            "addressId": "20220080E543A2C4",
+            "niceAddressId": "20:22:00:80:E5:43:A2:C4",
+            "id": "2201080000000000000000000000000000000000"
+          },
+          "ib": null,
+          "iscsi": null,
+          "sas": null,
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        },
+        {
+          "interfaceType": "fc",
+          "fibre": {
+            "channel": 3,
+            "loopID": 255,
+            "speed": 0,
+            "hardAddress": 2,
+            "nodeName": "20020080E543A2C4",
+            "portName": "20320080E543A2C4",
+            "portId": "FFFFFF",
+            "topology": "unknown",
+            "part": "QL-EP8324       ",
+            "revision": 2,
+            "chanMiswire": false,
+            "esmMiswire": false,
+            "linkStatus": "down",
+            "isDegraded": false,
+            "speedControl": "auto",
+            "maxSpeed": 1600,
+            "speedNegError": false,
+            "reserved1": "000000000000000000000000",
+            "reserved2": "",
+            "ddsChannelState": 0,
+            "ddsStateReason": 0,
+            "ddsStateWho": 1,
+            "isLocal": true,
+            "channelPorts": [],
+            "currentInterfaceSpeed": "speedUnknown",
+            "maximumInterfaceSpeed": "speed16gig",
+            "interfaceRef": "2201090000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "isTrunkCapable": false,
+            "trunkMiswire": false,
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "0",
+            "bidirectionalMaxRate": "0",
+            "fc4Types": null,
+            "controllerId": "070000000000000000000001",
+            "interfaceId": "2201090000000000000000000000000000000000",
+            "addressId": "20320080E543A2C4",
+            "niceAddressId": "20:32:00:80:E5:43:A2:C4",
+            "id": "2201090000000000000000000000000000000000"
+          },
+          "ib": null,
+          "iscsi": null,
+          "sas": null,
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        },
+        {
+          "interfaceType": "fc",
+          "fibre": {
+            "channel": 4,
+            "loopID": 255,
+            "speed": 0,
+            "hardAddress": 3,
+            "nodeName": "20020080E543A2C4",
+            "portName": "20420080E543A2C4",
+            "portId": "FFFFFF",
+            "topology": "unknown",
+            "part": "QL-EP8324       ",
+            "revision": 2,
+            "chanMiswire": false,
+            "esmMiswire": false,
+            "linkStatus": "down",
+            "isDegraded": false,
+            "speedControl": "auto",
+            "maxSpeed": 1600,
+            "speedNegError": false,
+            "reserved1": "000000000000000000000000",
+            "reserved2": "",
+            "ddsChannelState": 0,
+            "ddsStateReason": 0,
+            "ddsStateWho": 1,
+            "isLocal": true,
+            "channelPorts": [],
+            "currentInterfaceSpeed": "speedUnknown",
+            "maximumInterfaceSpeed": "speed16gig",
+            "interfaceRef": "22010A0000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "isTrunkCapable": false,
+            "trunkMiswire": false,
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "0",
+            "bidirectionalMaxRate": "0",
+            "fc4Types": null,
+            "controllerId": "070000000000000000000001",
+            "interfaceId": "22010A0000000000000000000000000000000000",
+            "addressId": "20420080E543A2C4",
+            "niceAddressId": "20:42:00:80:E5:43:A2:C4",
+            "id": "22010A0000000000000000000000000000000000"
+          },
+          "ib": null,
+          "iscsi": null,
+          "sas": null,
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        }
+      ],
+      "driveInterfaces": [
+        {
+          "interfaceType": "sas",
+          "fibre": null,
+          "ib": null,
+          "iscsi": null,
+          "sas": {
+            "channel": 1,
+            "currentInterfaceSpeed": "speed6gig",
+            "maximumInterfaceSpeed": "speed6gig",
+            "part": "LSISAS2308",
+            "revision": 223038464,
+            "isDegraded": false,
+            "iocPort": {
+              "parent": {
+                "type": "controller",
+                "controller": "070000000000000000000001",
+                "drive": null,
+                "expander": null,
+                "hostBoardRef": null
+              },
+              "attachedDevice": {
+                "channel": 1,
+                "channelType": "driveside",
+                "sasAttachedDeviceData": {
+                  "type": "expander",
+                  "alternateController": null,
+                  "drive": null,
+                  "expander": "200050080E5209C1A00000000001000000000000",
+                  "remoteHostPortAddress": null,
+                  "localController": null,
+                  "physicalLocation": null
+                }
+              },
+              "state": "optimal",
+              "miswireType": "none",
+              "channelPortRef": "1F01010001010000000000000000000000000000",
+              "sasPhys": [
+                {
+                  "phyIdentifier": 4,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 5,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 6,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 7,
+                  "isOperational": true
+                }
+              ],
+              "portTypeData": {
+                "portType": "endDevice",
+                "portIdentifier": "50080E543A2C4004",
+                "routingType": "__UNDEFINED"
+              },
+              "portMode": "externalOut",
+              "domainNumber": 1,
+              "attachedChannelPortRef": "1F01010000010050080E5209C1A0000000000000",
+              "discoveryStatus": 0
+            },
+            "interfaceRef": "2201000000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "2200000000",
+            "bidirectionalMaxRate": "4200000000",
+            "controllerId": null,
+            "interfaceId": "2201000000000000000000000000000000000000",
+            "addressId": "50080E543A2C4004",
+            "niceAddressId": "50080E543A2C4004",
+            "basePortAddress": "50080E543A2C400",
+            "id": "2201000000000000000000000000000000000000"
+          },
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        },
+        {
+          "interfaceType": "sas",
+          "fibre": null,
+          "ib": null,
+          "iscsi": null,
+          "sas": {
+            "channel": 2,
+            "currentInterfaceSpeed": "speed6gig",
+            "maximumInterfaceSpeed": "speed6gig",
+            "part": "LSISAS2308",
+            "revision": 223038464,
+            "isDegraded": false,
+            "iocPort": {
+              "parent": {
+                "type": "controller",
+                "controller": "070000000000000000000001",
+                "drive": null,
+                "expander": null,
+                "hostBoardRef": null
+              },
+              "attachedDevice": {
+                "channel": 2,
+                "channelType": "driveside",
+                "sasAttachedDeviceData": {
+                  "type": "expander",
+                  "alternateController": null,
+                  "drive": null,
+                  "expander": "200050080E520BA7D00001010001000000000000",
+                  "remoteHostPortAddress": null,
+                  "localController": null,
+                  "physicalLocation": null
+                }
+              },
+              "state": "optimal",
+              "miswireType": "none",
+              "channelPortRef": "1F01010002010000000000000000000000000000",
+              "sasPhys": [
+                {
+                  "phyIdentifier": 0,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 1,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 2,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 3,
+                  "isOperational": true
+                }
+              ],
+              "portTypeData": {
+                "portType": "endDevice",
+                "portIdentifier": "50080E543A2C4010",
+                "routingType": "__UNDEFINED"
+              },
+              "portMode": "externalOut",
+              "domainNumber": 2,
+              "attachedChannelPortRef": "1F01020000010050080E520BA7D0000000000000",
+              "discoveryStatus": 0
+            },
+            "interfaceRef": "2201010000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "2200000000",
+            "bidirectionalMaxRate": "4200000000",
+            "controllerId": null,
+            "interfaceId": "2201010000000000000000000000000000000000",
+            "addressId": "50080E543A2C4010",
+            "niceAddressId": "50080E543A2C4010",
+            "basePortAddress": "50080E543A2C401",
+            "id": "2201010000000000000000000000000000000000"
+          },
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        },
+        {
+          "interfaceType": "sas",
+          "fibre": null,
+          "ib": null,
+          "iscsi": null,
+          "sas": {
+            "channel": 3,
+            "currentInterfaceSpeed": "speed6gig",
+            "maximumInterfaceSpeed": "speed6gig",
+            "part": "LSISAS2308",
+            "revision": 223038464,
+            "isDegraded": false,
+            "iocPort": {
+              "parent": {
+                "type": "controller",
+                "controller": "070000000000000000000001",
+                "drive": null,
+                "expander": null,
+                "hostBoardRef": null
+              },
+              "attachedDevice": {
+                "channel": 3,
+                "channelType": "driveside",
+                "sasAttachedDeviceData": {
+                  "type": "expander",
+                  "alternateController": null,
+                  "drive": null,
+                  "expander": "2000000000000000000002630001000000000000",
+                  "remoteHostPortAddress": null,
+                  "localController": null,
+                  "physicalLocation": null
+                }
+              },
+              "state": "optimal",
+              "miswireType": "none",
+              "channelPortRef": "1F01000003010000000000000000000000000000",
+              "sasPhys": [
+                {
+                  "phyIdentifier": 4,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 5,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 6,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 7,
+                  "isOperational": true
+                }
+              ],
+              "portTypeData": {
+                "portType": "endDevice",
+                "portIdentifier": "50080E543A2C4014",
+                "routingType": "__UNDEFINED"
+              },
+              "portMode": "internal",
+              "domainNumber": 3,
+              "attachedChannelPortRef": "0000000000000000000000000000000000000000",
+              "discoveryStatus": 0
+            },
+            "interfaceRef": "2201020000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "2200000000",
+            "bidirectionalMaxRate": "4200000000",
+            "controllerId": null,
+            "interfaceId": "2201020000000000000000000000000000000000",
+            "addressId": "50080E543A2C4014",
+            "niceAddressId": "50080E543A2C4014",
+            "basePortAddress": "50080E543A2C401",
+            "id": "2201020000000000000000000000000000000000"
+          },
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        },
+        {
+          "interfaceType": "sas",
+          "fibre": null,
+          "ib": null,
+          "iscsi": null,
+          "sas": {
+            "channel": 4,
+            "currentInterfaceSpeed": "speed6gig",
+            "maximumInterfaceSpeed": "speed6gig",
+            "part": "LSISAS2308",
+            "revision": 223038464,
+            "isDegraded": false,
+            "iocPort": {
+              "parent": {
+                "type": "controller",
+                "controller": "070000000000000000000001",
+                "drive": null,
+                "expander": null,
+                "hostBoardRef": null
+              },
+              "attachedDevice": {
+                "channel": 4,
+                "channelType": "driveside",
+                "sasAttachedDeviceData": {
+                  "type": "expander",
+                  "alternateController": null,
+                  "drive": null,
+                  "expander": "2000000000000000000003630001000000000000",
+                  "remoteHostPortAddress": null,
+                  "localController": null,
+                  "physicalLocation": null
+                }
+              },
+              "state": "optimal",
+              "miswireType": "none",
+              "channelPortRef": "1F01000004010000000000000000000000000000",
+              "sasPhys": [
+                {
+                  "phyIdentifier": 0,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 1,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 2,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 3,
+                  "isOperational": true
+                }
+              ],
+              "portTypeData": {
+                "portType": "endDevice",
+                "portIdentifier": "50080E543A2C4020",
+                "routingType": "__UNDEFINED"
+              },
+              "portMode": "internal",
+              "domainNumber": 4,
+              "attachedChannelPortRef": "0000000000000000000000000000000000000000",
+              "discoveryStatus": 0
+            },
+            "interfaceRef": "2201030000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "2200000000",
+            "bidirectionalMaxRate": "4200000000",
+            "controllerId": null,
+            "interfaceId": "2201030000000000000000000000000000000000",
+            "addressId": "50080E543A2C4020",
+            "niceAddressId": "50080E543A2C4020",
+            "basePortAddress": "50080E543A2C402",
+            "id": "2201030000000000000000000000000000000000"
+          },
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        },
+        {
+          "interfaceType": "sas",
+          "fibre": null,
+          "ib": null,
+          "iscsi": null,
+          "sas": {
+            "channel": 5,
+            "currentInterfaceSpeed": "speed6gig",
+            "maximumInterfaceSpeed": "speed6gig",
+            "part": "LSISAS2308",
+            "revision": 223038464,
+            "isDegraded": false,
+            "iocPort": {
+              "parent": {
+                "type": "controller",
+                "controller": "070000000000000000000001",
+                "drive": null,
+                "expander": null,
+                "hostBoardRef": null
+              },
+              "attachedDevice": {
+                "channel": 5,
+                "channelType": "driveside",
+                "sasAttachedDeviceData": {
+                  "type": "expander",
+                  "alternateController": null,
+                  "drive": null,
+                  "expander": "2000000000000000000002630001000000000000",
+                  "remoteHostPortAddress": null,
+                  "localController": null,
+                  "physicalLocation": null
+                }
+              },
+              "state": "optimal",
+              "miswireType": "none",
+              "channelPortRef": "1F01000003010000000000000000000000000000",
+              "sasPhys": [
+                {
+                  "phyIdentifier": 0,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 1,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 2,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 3,
+                  "isOperational": true
+                }
+              ],
+              "portTypeData": {
+                "portType": "endDevice",
+                "portIdentifier": "50080E543A2C4000",
+                "routingType": "__UNDEFINED"
+              },
+              "portMode": "internal",
+              "domainNumber": 3,
+              "attachedChannelPortRef": "0000000000000000000000000000000000000000",
+              "discoveryStatus": 0
+            },
+            "interfaceRef": "2201040000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "2200000000",
+            "bidirectionalMaxRate": "4200000000",
+            "controllerId": null,
+            "interfaceId": "2201040000000000000000000000000000000000",
+            "addressId": "50080E543A2C4000",
+            "niceAddressId": "50080E543A2C4000",
+            "basePortAddress": "50080E543A2C400",
+            "id": "2201040000000000000000000000000000000000"
+          },
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        },
+        {
+          "interfaceType": "sas",
+          "fibre": null,
+          "ib": null,
+          "iscsi": null,
+          "sas": {
+            "channel": 6,
+            "currentInterfaceSpeed": "speed6gig",
+            "maximumInterfaceSpeed": "speed6gig",
+            "part": "LSISAS2308",
+            "revision": 223038464,
+            "isDegraded": false,
+            "iocPort": {
+              "parent": {
+                "type": "controller",
+                "controller": "070000000000000000000001",
+                "drive": null,
+                "expander": null,
+                "hostBoardRef": null
+              },
+              "attachedDevice": {
+                "channel": 6,
+                "channelType": "driveside",
+                "sasAttachedDeviceData": {
+                  "type": "alternateController",
+                  "alternateController": "000000000000000000000000",
+                  "drive": null,
+                  "expander": null,
+                  "remoteHostPortAddress": null,
+                  "localController": null,
+                  "physicalLocation": null
+                }
+              },
+              "state": "optimal",
+              "miswireType": "none",
+              "channelPortRef": "1F01000006010000000000000000000000000000",
+              "sasPhys": [
+                {
+                  "phyIdentifier": 4,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 5,
+                  "isOperational": true
+                }
+              ],
+              "portTypeData": {
+                "portType": "endDevice",
+                "portIdentifier": "50080E543A2C4024",
+                "routingType": "__UNDEFINED"
+              },
+              "portMode": "internal",
+              "domainNumber": 6,
+              "attachedChannelPortRef": "0000000000000000000000000000000000000000",
+              "discoveryStatus": 0
+            },
+            "interfaceRef": "2201050000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "2200000000",
+            "bidirectionalMaxRate": "4200000000",
+            "controllerId": null,
+            "interfaceId": "2201050000000000000000000000000000000000",
+            "addressId": "50080E543A2C4024",
+            "niceAddressId": "50080E543A2C4024",
+            "basePortAddress": "50080E543A2C402",
+            "id": "2201050000000000000000000000000000000000"
+          },
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        },
+        {
+          "interfaceType": "sas",
+          "fibre": null,
+          "ib": null,
+          "iscsi": null,
+          "sas": {
+            "channel": 7,
+            "currentInterfaceSpeed": "speed6gig",
+            "maximumInterfaceSpeed": "speed6gig",
+            "part": "LSISAS2308",
+            "revision": 223038464,
+            "isDegraded": false,
+            "iocPort": {
+              "parent": {
+                "type": "controller",
+                "controller": "070000000000000000000001",
+                "drive": null,
+                "expander": null,
+                "hostBoardRef": null
+              },
+              "attachedDevice": {
+                "channel": 7,
+                "channelType": "driveside",
+                "sasAttachedDeviceData": {
+                  "type": "alternateController",
+                  "alternateController": "000000000000000000000000",
+                  "drive": null,
+                  "expander": null,
+                  "remoteHostPortAddress": null,
+                  "localController": null,
+                  "physicalLocation": null
+                }
+              },
+              "state": "optimal",
+              "miswireType": "none",
+              "channelPortRef": "1F01000007010000000000000000000000000000",
+              "sasPhys": [
+                {
+                  "phyIdentifier": 6,
+                  "isOperational": true
+                },
+                {
+                  "phyIdentifier": 7,
+                  "isOperational": true
+                }
+              ],
+              "portTypeData": {
+                "portType": "endDevice",
+                "portIdentifier": "50080E543A2C4026",
+                "routingType": "__UNDEFINED"
+              },
+              "portMode": "internal",
+              "domainNumber": 7,
+              "attachedChannelPortRef": "0000000000000000000000000000000000000000",
+              "discoveryStatus": 0
+            },
+            "interfaceRef": "2201060000000000000000000000000000000000",
+            "physicalLocation": {
+              "trayRef": "0000000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "generic",
+                "controllerRef": null,
+                "symbolRef": "0000000000000000000000000000000000000000",
+                "typedReference": null
+              },
+              "locationPosition": 0,
+              "label": ""
+            },
+            "protectionInformationCapable": true,
+            "oneWayMaxRate": "2200000000",
+            "bidirectionalMaxRate": "4200000000",
+            "controllerId": null,
+            "interfaceId": "2201060000000000000000000000000000000000",
+            "addressId": "50080E543A2C4026",
+            "niceAddressId": "50080E543A2C4026",
+            "basePortAddress": "50080E543A2C402",
+            "id": "2201060000000000000000000000000000000000"
+          },
+          "sata": null,
+          "scsi": null,
+          "couplingDriverNvme": null,
+          "ethernet": null,
+          "pcie": null
+        }
+      ],
+      "netInterfaces": [
+        {
+          "interfaceType": "ethernet",
+          "ethernet": {
+            "interfaceName": "gei0",
+            "channel": 1,
+            "speed": 1000,
+            "ip": 168428133,
+            "alias": "target",
+            "macAddr": "0080E543A2C4",
+            "gatewayIp": 168427774,
+            "subnetMask": -65536,
+            "bootpUsed": false,
+            "rloginEnabled": false,
+            "reserved1": "0000000000000000",
+            "setupError": false,
+            "reserved2": "",
+            "interfaceRef": "2800070000000000000000000001000000000000",
+            "linkStatus": "up",
+            "ipv4Enabled": true,
+            "ipv4Address": "10.10.2.101",
+            "ipv4SubnetMask": "255.255.0.0",
+            "ipv4AddressConfigMethod": "configStatic",
+            "ipv6Enabled": false,
+            "ipv6LocalAddress": {
+              "address": "00000000000000000000000000000000",
+              "addressState": {
+                "addressType": "typeInterface",
+                "interfaceAddressState": "configured",
+                "routerAddressState": "__UNDEFINED"
+              }
+            },
+            "ipv6PortStaticRoutableAddress": {
+              "address": "00000000000000000000000000000000",
+              "addressState": {
+                "addressType": "typeInterface",
+                "interfaceAddressState": "__UNDEFINED",
+                "routerAddressState": "__UNDEFINED"
+              }
+            },
+            "ipv6PortRoutableAddresses": [],
+            "ipv6AddressConfigMethod": "configStatic",
+            "fullDuplex": true,
+            "supportedSpeedSettings": [
+              "speedAutoNegotiated",
+              "speed10MbitHalfDuplex",
+              "speed10MbitFullDuplex",
+              "speed100MbitHalfDuplex",
+              "speed100MbitFullDuplex",
+              "speed1000MbitFullDuplex"
+            ],
+            "configuredSpeedSetting": "speedAutoNegotiated",
+            "currentSpeed": "speed1gig",
+            "physicalLocation": {
+              "trayRef": "0E00000000000000000000000000000000000000",
+              "slot": 0,
+              "locationParent": {
+                "refType": "controller",
+                "controllerRef": "070000000000000000000001",
+                "symbolRef": null,
+                "typedReference": null
+              },
+              "locationPosition": 1,
+              "label": "Port 1"
+            },
+            "ipv4GatewayAddress": "10.10.0.254",
+            "controllerRef": "070000000000000000000001",
+            "controllerSlot": 1,
+            "dnsProperties": {
+              "acquisitionProperties": {
+                "dnsAcquisitionType": "dhcp",
+                "dnsServers": null
+              },
+              "dhcpAcquiredDnsServers": []
+            },
+            "ntpProperties": {
+              "acquisitionProperties": {
+                "ntpAcquisitionType": "disabled",
+                "ntpServers": null
+              },
+              "dhcpAcquiredNtpServers": []
+            },
+            "id": "2800070000000000000000000001000000000000"
+          }
+        },
+        {
+          "interfaceType": "ethernet",
+          "ethernet": {
+            "interfaceName": "gei1",
+            "channel": 2,
+            "speed": 0,
+            "ip": 0,
+            "alias": "target",
+            "macAddr": "0080E543A2C5",
+            "gatewayIp": 168427774,
+            "subnetMask": 0,
+            "bootpUsed": false,
+            "rloginEnabled": false,
+            "reserved1": "0000000000000000",
+            "setupError": false,
+            "reserved2": "",
+            "interfaceRef": "2801070000000000000000000001000000000000",
+            "linkStatus": "down",
+            "ipv4Enabled": true,
+            "ipv4Address": "0.0.0.0",
+            "ipv4SubnetMask": "0.0.0.0",
+            "ipv4AddressConfigMethod": "configDhcp",
+            "ipv6Enabled": true,
+            "ipv6LocalAddress": {
+              "address": "00000000000000000000000000000000",
+              "addressState": {
+                "addressType": "typeInterface",
+                "interfaceAddressState": "configured",
+                "routerAddressState": "__UNDEFINED"
+              }
+            },
+            "ipv6PortStaticRoutableAddress": {
+              "address": "00000000000000000000000000000000",
+              "addressState": {
+                "addressType": "typeInterface",
+                "interfaceAddressState": "__UNDEFINED",
+                "routerAddressState": "__UNDEFINED"
+              }
+            },
+            "ipv6PortRoutableAddresses": [],
+            "ipv6AddressConfigMethod": "configStateless",
+            "fullDuplex": false,
+            "supportedSpeedSettings": [
+              "speedAutoNegotiated",
+              "speed10MbitHalfDuplex",
+              "speed10MbitFullDuplex",
+              "speed100MbitHalfDuplex",
+              "speed100MbitFullDuplex",
+              "speed1000MbitFullDuplex"
+            ],
+            "configuredSpeedSetting": "speedAutoNegotiated",
+            "currentSpeed": "speedUnknown",
+            "physicalLocation": {
+              "trayRef": "0E00000000000000000000000000000000000000",
+              "slot": 1,
+              "locationParent": {
+                "refType": "controller",
+                "controllerRef": "070000000000000000000001",
+                "symbolRef": null,
+                "typedReference": null
+              },
+              "locationPosition": 2,
+              "label": "Port 2"
+            },
+            "ipv4GatewayAddress": "10.10.0.254",
+            "controllerRef": "070000000000000000000001",
+            "controllerSlot": 1,
+            "dnsProperties": {
+              "acquisitionProperties": {
+                "dnsAcquisitionType": "dhcp",
+                "dnsServers": null
+              },
+              "dhcpAcquiredDnsServers": []
+            },
+            "ntpProperties": {
+              "acquisitionProperties": {
+                "ntpAcquisitionType": "disabled",
+                "ntpServers": null
+              },
+              "dhcpAcquiredNtpServers": []
+            },
+            "id": "2801070000000000000000000001000000000000"
+          }
+        }
+      ],
+      "inventory": [],
+      "reserved1": "000000000000000000000000",
+      "reserved2": "",
+      "hostBoardID": "1794",
+      "physicalCacheMemorySize": 10240,
+      "readyToRemove": false,
+      "boardSubmodelID": "244",
+      "submodelSupported": true,
+      "oemPartNumber": "E-X561202A-R6",
+      "partNumber": "111-02820   ",
+      "rtrAttributes": {
+        "cruType": "dedicated",
+        "parentCru": null,
+        "rtrAttributeData": {
+          "hasReadyToRemoveIndicator": true,
+          "readyToRemove": false
+        }
+      },
+      "bootTime": "1589904019",
+      "modelName": "5600",
+      "networkSettings": {
+        "ipv4DefaultRouterAddress": "10.10.0.254",
+        "ipv6DefaultRouterAddress": {
+          "address": "FE800000000000000280E5FFFE43A2C4",
+          "addressState": {
+            "addressType": "typeInterface",
+            "interfaceAddressState": "configured",
+            "routerAddressState": "__UNDEFINED"
+          }
+        },
+        "ipv6CandidateDefaultRouterAddresses": [
+          {
+            "address": "FE800000000000000280E5FFFE43A2C4",
+            "addressState": {
+              "addressType": "typeRouter",
+              "interfaceAddressState": "__UNDEFINED",
+              "routerAddressState": "configured"
+            }
+          }
+        ],
+        "remoteAccessEnabled": false,
+        "dnsProperties": {
+          "acquisitionProperties": {
+            "dnsAcquisitionType": "dhcp",
+            "dnsServers": null
+          },
+          "dhcpAcquiredDnsServers": []
+        },
+        "ntpProperties": {
+          "acquisitionProperties": {
+            "ntpAcquisitionType": "disabled",
+            "ntpServers": null
+          },
+          "dhcpAcquiredNtpServers": []
+        }
+      },
+      "repairPolicy": {
+        "removalData": {
+          "removalMethod": "__UNDEFINED",
+          "rtrAttributes": null
+        },
+        "replacementMethod": "__UNDEFINED"
+      },
+      "flashCacheMemorySize": 520093696,
+      "ctrlIocDumpData": {
+        "iocDumpNeedsRetrieved": false,
+        "iocDumpTag": 0,
+        "timeStamp": "0"
+      },
+      "locateInProgress": false,
+      "hasTrayIdentityIndicator": false,
+      "controllerErrorMode": "notInErrorMode",
+      "codeVersions": [
+        {
+          "codeModule": "raid",
+          "versionString": "08.40.60.01"
+        }
+      ],
+      "containerServicesConfiguration": null,
+      "id": "070000000000000000000001"
+    }
+  ]
+}
