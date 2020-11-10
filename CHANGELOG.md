@@ -5,6 +5,7 @@
 * Remove --exporter.use-cache flag and all caching logic
 * Remove ID related labels from all metrics as this will be instance label
 * Refactor drive-statistics collector
+* Refactor system-statistics collector
 * Remove metrics
 ** eseries_drive_combined_iops, eseries_drive_combined_throughput_bytes_per_second
 ** eseries_drive_read_ops, eseries_drive_read_iops, eseries_drive_read_throughput_mb_per_second
@@ -37,6 +38,7 @@
 
 * Update to Go 1.15 and update all dependencies
 * Improve status metrics to always have all possible statuses and set 1 for current status
+* Add controller-statistics collector
 
 ## 0.1.1 / 2020-04-03
 

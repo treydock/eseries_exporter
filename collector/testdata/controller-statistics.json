@@ -1,0 +1,106 @@
+[
+  {
+    "observedTime": "2020-11-10T20:00:46.000+0000",
+    "observedTimeInMS": "1605038446000",
+    "lastResetTime": "2020-11-10T01:31:51.000+0000",
+    "lastResetTimeInMS": "1604971911000",
+    "sourceController": "",
+    "controllerId": "070000000000000000000001",
+    "arrayId": "e5660-01",
+    "arrayWwn": "33373630322033373635392056D6B726",
+    "cpuUtilizationStats": [
+      {
+        "maxCpuUtilization": 4,
+        "sumCpuUtilization": 217579,
+        "ssqCpuUtilization": 1048419
+      },
+      {
+        "maxCpuUtilization": 11,
+        "sumCpuUtilization": 142233,
+        "ssqCpuUtilization": 505783
+      },
+      {
+        "maxCpuUtilization": 3,
+        "sumCpuUtilization": 120367,
+        "ssqCpuUtilization": 345387
+      },
+      {
+        "maxCpuUtilization": 1,
+        "sumCpuUtilization": 79214,
+        "ssqCpuUtilization": 234548
+      }
+    ],
+    "totalIopsServiced": 52440810,
+    "totalBytesServiced": 2502979511000,
+    "cacheHitsIopsTotal": 938257,
+    "cacheHitsBytesTotal": 3391246500,
+    "randomIosTotal": 34607127,
+    "randomBytesTotal": 1219614194500,
+    "readIopsTotal": 38999153,
+    "readBytesTotal": 1380509192000,
+    "writeIopsTotal": 13441657,
+    "writeBytesTotal": 1122470319000,
+    "mirrorIopsTotal": 13441657,
+    "mirrorBytesTotal": 1122470319000,
+    "fullStripeWritesBytes": 959389039500,
+    "raid0BytesTransferred": 0,
+    "raid1BytesTransferred": 0,
+    "raid5BytesTransferred": 0,
+    "raid6BytesTransferred": 0,
+    "ddpBytesTransferred": 1122470319000,
+    "maxPossibleBpsUnderCurrentLoad": 4608974500,
+    "maxPossibleIopsUnderCurrentLoad": 198264
+  },
+  {
+    "observedTime": "2020-11-10T20:00:46.000+0000",
+    "observedTimeInMS": "1605038446000",
+    "lastResetTime": "2020-11-10T01:31:52.000+0000",
+    "lastResetTimeInMS": "1604971912000",
+    "sourceController": "",
+    "controllerId": "070000000000000000000002",
+    "arrayId": "e5660-01",
+    "arrayWwn": "33373630322033373635392056D6B726",
+    "cpuUtilizationStats": [
+      {
+        "maxCpuUtilization": 37,
+        "sumCpuUtilization": 274117,
+        "ssqCpuUtilization": 2272747
+      },
+      {
+        "maxCpuUtilization": 24,
+        "sumCpuUtilization": 172164,
+        "ssqCpuUtilization": 1024554
+      },
+      {
+        "maxCpuUtilization": 27,
+        "sumCpuUtilization": 166795,
+        "ssqCpuUtilization": 922233
+      },
+      {
+        "maxCpuUtilization": 1,
+        "sumCpuUtilization": 82728,
+        "ssqCpuUtilization": 311776
+      }
+    ],
+    "totalIopsServiced": 76450167,
+    "totalBytesServiced": 4488065979000,
+    "cacheHitsIopsTotal": 1304694,
+    "cacheHitsBytesTotal": 471270000,
+    "randomIosTotal": 40834002,
+    "randomBytesTotal": 1999602077500,
+    "readIopsTotal": 45845804,
+    "readBytesTotal": 2123572637000,
+    "writeIopsTotal": 30604363,
+    "writeBytesTotal": 2364493342000,
+    "mirrorIopsTotal": 30604363,
+    "mirrorBytesTotal": 2364493342000,
+    "fullStripeWritesBytes": 2098305049000,
+    "raid0BytesTransferred": 0,
+    "raid1BytesTransferred": 0,
+    "raid5BytesTransferred": 0,
+    "raid6BytesTransferred": 0,
+    "ddpBytesTransferred": 2364493342000,
+    "maxPossibleBpsUnderCurrentLoad": 6802552000,
+    "maxPossibleIopsUnderCurrentLoad": 323564
+  }
+]
