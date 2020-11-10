@@ -67,8 +67,8 @@ func TestSystemStatisticsCollector(t *testing.T) {
 	gatherers := setupGatherer(collector)
 	if val, err := testutil.GatherAndCount(gatherers); err != nil {
 		t.Errorf("Unexpected error: %v", err)
-	} else if val != 24 {
-		t.Errorf("Unexpected collection count %d, expected 24", val)
+	} else if val != 12 {
+		t.Errorf("Unexpected collection count %d, expected 12", val)
 	}
 	if err := testutil.GatherAndCompare(gatherers, strings.NewReader(expected),
 		/*
