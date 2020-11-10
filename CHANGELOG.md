@@ -4,9 +4,11 @@
 
 * Remove --exporter.use-cache flag and all caching logic
 * Remove ID related labels from all metrics as this will be instance label
+* Refactor drive-statistics collector
 * Remove metrics
-** eseries_drive_read_ops
-** eseries_drive_write_ops
+** eseries_drive_combined_iops, eseries_drive_combined_throughput_bytes_per_second
+** eseries_drive_read_ops, eseries_drive_read_iops, eseries_drive_read_throughput_bytes_per_second
+** eseries_drive_write_ops, eseries_drive_write_iops, eseries_drive_write_throughput_bytes_per_second
 ** eseries_system_read_ops
 ** eseries_system_write_ops
 * Rename metrics to change units of measurement
@@ -25,6 +27,13 @@
 ** eseries_system_combined_throughput_mb_per_second to eseries_system_combined_throughput_bytes_per_second
 ** eseries_system_read_throughput_mb_per_second to eseries_system_read_throughput_bytes_per_second
 ** eseries_system_write_throughput_mb_per_second to eseries_system_write_throughput_bytes_per_second
+* Add metrics
+** eseries_drive_idle_time_total, eseries_drive_other_ops_total, eseries_drive_other_time_total
+** eseries_drive_read_bytes_total, eseries_drive_read_ops_total, eseries_drive_read_time_total
+** eseries_drive_recovered_errors_total, eseries_drive_retried_ios_total, eseries_drive_timeouts_total
+** eseries_drive_unrecovered_errors_total
+** eseries_drive_write_bytes_total, eseries_drive_write_ops_total, eseries_drive_write_time_total
+** eseries_drive_queue_depth_total, eseries_drive_random_ios_total, eseries_drive_random_bytes_total
 
 ### Improvements
 
