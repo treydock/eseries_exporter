@@ -125,10 +125,10 @@ func NewControllerStatisticsExporter(target config.Target, logger log.Logger) Co
 			"Controller statistic readResponseTime", labels, nil),
 		WriteResponseTime: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "write_response_time_seconds"),
 			"Controller statistic writeResponseTime", labels, nil),
-		MaxCpuUtilization: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "max_cpu_utilization"),
-			"Controller statistic maxCpuUtilization", labels, nil),
-		CpuAvgUtilization: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "average_cpu_utilization"),
-			"Controller statistic cpuAvgUtilization", labels, nil),
+		MaxCpuUtilization: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "cpu_max_utilization"),
+			"Controller statistic maxCpuUtilization (0.0-1.0 ratio of CPU percent utilization)", labels, nil),
+		CpuAvgUtilization: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "cpu_average_utilization"),
+			"Controller statistic cpuAvgUtilization (0.0-1.0 ratio of CPU percent utilization)", labels, nil),
 		TotalIopsServiced: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "iops_total"),
 			"Controller statistic totalIopsServiced", labels, nil),
 		TotalBytesServiced: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "bytes_total"),
@@ -155,17 +155,17 @@ func NewControllerStatisticsExporter(target config.Target, logger log.Logger) Co
 			"Controller statistic mirrorBytesTotal", labels, nil),
 		FullStripeWritesBytes: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "full_stripe_writes_bytes_total"),
 			"Controller statistic fullStripeWritesBytes", labels, nil),
-		Raid0BytesTransferred: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "raid0_bytes_transferred_total"),
+		Raid0BytesTransferred: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "raid0_transferred_bytes_total"),
 			"Controller statistic raid0BytesTransferred", labels, nil),
-		Raid1BytesTransferred: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "raid1_bytes_transferred_total"),
+		Raid1BytesTransferred: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "raid1_transferred_bytes_total"),
 			"Controller statistic raid1BytesTransferred", labels, nil),
-		Raid5BytesTransferred: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "raid5_bytes_transferred_total"),
+		Raid5BytesTransferred: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "raid5_transferred_bytes_total"),
 			"Controller statistic raid5BytesTransferred", labels, nil),
-		Raid6BytesTransferred: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "raid6_bytes_transferred_total"),
+		Raid6BytesTransferred: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "raid6_transferred_bytes_total"),
 			"Controller statistic raid6BytesTransferred", labels, nil),
 		DdpBytesTransferred: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "ddp_transferred_bytes_total"),
 			"Controller statistic ddpBytesTransferred", labels, nil),
-		MaxPossibleBpsUnderCurrentLoad: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "max_possible_throughput"),
+		MaxPossibleBpsUnderCurrentLoad: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "max_possible_throughput_bytes_per_second"),
 			"Controller statistic maxPossibleBpsUnderCurrentLoad", labels, nil),
 		MaxPossibleIopsUnderCurrentLoad: prometheus.NewDesc(prometheus.BuildFQName(namespace, "controller", "max_possible_iops"),
 			"Controller statistic maxPossibleIopsUnderCurrentLoad", labels, nil),
@@ -308,6 +308,9 @@ func (c *ControllerStatisticsCollector) collect() ([]AnalysedControllerStatistic
 		s.CombinedResponseTime = s.CombinedResponseTime * 0.001
 		s.ReadResponseTime = s.ReadResponseTime * 0.001
 		s.WriteResponseTime = s.WriteResponseTime * 0.001
+		// Convert from percent to ratio
+		s.MaxCpuUtilization = s.MaxCpuUtilization / 100
+		s.CpuAvgUtilization = s.CpuAvgUtilization / 100
 	}
 	for i := range statistics {
 		s := &statistics[i]

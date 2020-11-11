@@ -70,10 +70,10 @@ func NewSystemStatisticsExporter(target config.Target, logger log.Logger) Collec
 			"System statistic CombinedHitResponseTime", nil, nil),
 		CombinedResponseTime: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "combined_response_time_seconds"),
 			"System statistic combinedResponseTime", nil, nil),
-		CpuAvgUtilization: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "cpu_avg_utilization"),
-			"System statistic CpuAvgUtilization", nil, nil),
-		MaxCpuUtilization: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "max_cpu_utilization"),
-			"System statistic MaxCpuUtilization", nil, nil),
+		CpuAvgUtilization: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "cpu_average_utilization"),
+			"System statistic CpuAvgUtilization (0.0-1.0 ratio of CPU percent utilization)", nil, nil),
+		MaxCpuUtilization: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "cpu_max_utilization"),
+			"System statistic MaxCpuUtilization (0.0-1.0 ratio of CPU percent utilization)", nil, nil),
 		ReadHitResponseTime: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "read_hit_response_time_seconds"),
 			"System statistic ReadHitResponseTime", nil, nil),
 		ReadPhysicalIOps: prometheus.NewDesc(prometheus.BuildFQName(namespace, "system", "read_physical_iops"),
@@ -152,5 +152,8 @@ func (c *SystemStatisticsCollector) collect() (SystemStatistics, error) {
 	statistics.ReadResponseTime = statistics.ReadResponseTime * 0.001
 	statistics.WriteHitResponseTime = statistics.WriteHitResponseTime * 0.001
 	statistics.WriteResponseTime = statistics.WriteResponseTime * 0.001
+	// Convert from percent to ratio
+	statistics.MaxCpuUtilization = statistics.MaxCpuUtilization / 100
+	statistics.CpuAvgUtilization = statistics.CpuAvgUtilization / 100
 	return statistics, nil
 }
