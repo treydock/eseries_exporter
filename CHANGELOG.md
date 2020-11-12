@@ -28,11 +28,11 @@
 ** eseries_system_write_response_time_milliseconds to eseries_system_write_response_time_seconds
 ** CPU utilization metrics are now ratios of 0.0-1.0, add _ratio suffix to metrics
 * Add metrics
-** eseries_drive_idle_time_total, eseries_drive_other_ops_total, eseries_drive_other_time_total
-** eseries_drive_read_bytes_total, eseries_drive_read_ops_total, eseries_drive_read_time_total
+** eseries_drive_idle_time_seconds_total, eseries_drive_other_ops_total, eseries_drive_other_time_seconds_total
+** eseries_drive_read_bytes_total, eseries_drive_read_ops_total, eseries_drive_read_time_seconds_total
 ** eseries_drive_recovered_errors_total, eseries_drive_retried_ios_total, eseries_drive_timeouts_total
 ** eseries_drive_unrecovered_errors_total
-** eseries_drive_write_bytes_total, eseries_drive_write_ops_total, eseries_drive_write_time_total
+** eseries_drive_write_bytes_total, eseries_drive_write_ops_total, eseries_drive_write_time_seconds_total
 ** eseries_drive_queue_depth_total, eseries_drive_random_ios_total, eseries_drive_random_bytes_total
 
 ### Improvements
