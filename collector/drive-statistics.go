@@ -279,9 +279,17 @@ func (c *DriveStatisticsCollector) collect() (DrivesInventory, []AnalysedDriveSt
 	for i := range analysedDriveStatistics {
 		s := &analysedDriveStatistics[i]
 		// Convert milliseconds to seconds
-		s.CombinedResponseTime = s.CombinedResponseTime * 0.001
-		s.ReadResponseTime = s.ReadResponseTime * 0.001
-		s.WriteResponseTime = s.WriteResponseTime * 0.001
+		s.CombinedResponseTime = s.CombinedResponseTime / 1000
+		s.ReadResponseTime = s.ReadResponseTime / 1000
+		s.WriteResponseTime = s.WriteResponseTime / 1000
+	}
+	for i := range driveStatistics {
+		s := &driveStatistics[i]
+		// Convert microseconds to seconds
+		s.IdleTime = s.IdleTime / 1000000
+		s.OtherTimeTotal = s.OtherTimeTotal / 1000000
+		s.ReadTimeTotal = s.ReadTimeTotal / 1000000
+		s.WriteTimeTotal = s.WriteTimeTotal / 1000000
 	}
 	return inventory, analysedDriveStatistics, driveStatistics, nil
 }
