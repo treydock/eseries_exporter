@@ -26,7 +26,7 @@
 ** eseries_system_read_response_time_milliseconds to eseries_system_read_response_time_seconds
 ** eseries_system_write_hit_response_time_milliseconds to eseries_system_write_hit_response_time_seconds
 ** eseries_system_write_response_time_milliseconds to eseries_system_write_response_time_seconds
-** CPU utilization metrics are now ratios of 0.0-1.0
+** CPU utilization metrics are now ratios of 0.0-1.0, add _ratio suffix to metrics
 * Add metrics
 ** eseries_drive_idle_time_total, eseries_drive_other_ops_total, eseries_drive_other_time_total
 ** eseries_drive_read_bytes_total, eseries_drive_read_ops_total, eseries_drive_read_time_total
