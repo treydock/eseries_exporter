@@ -64,7 +64,7 @@ This exporter expects to communicate with SANtricity Web Services Proxy API and 
 Example of running the Docker container
 
 ```
-docker run -d -p 9313:9313 -v "eseries_exporter.yaml:/ssh_exporter.yaml:ro" treydock/eseries_exporter
+docker run -d -p 9313:9313 -v "eseries_exporter.yaml:/eseries_exporter.yaml:ro" treydock/eseries_exporter
 ```
 
 ## Install
