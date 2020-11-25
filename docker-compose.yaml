@@ -1,0 +1,22 @@
+---
+version: '3'
+services:
+  eseries_webservices_proxy:
+    container_name: eseries_webservices_proxy
+    build:
+      context: "./webservices_proxy"
+    network_mode: host
+    environment:
+    - ACCEPT_EULA=true
+    volumes:
+    - "/var/lib/eseries_webservices_proxy/working:/opt/netapp/webservices_proxy/working"
+    restart: always
+  eseries_exporter:
+    container_name: eseries_exporter
+    image: treydock/eseries_exporter:v1.0.0
+    network_mode: host
+    command:
+    - "--web.listen-address=:9313"
+    volumes:
+    - "./eseries_exporter.yaml:/eseries_exporter.yaml:ro"
+    restart: always
