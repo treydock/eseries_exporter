@@ -40,6 +40,8 @@
 * Update to Go 1.15 and update all dependencies
 * Improve status metrics to always have all possible statuses and set 1 for current status
 * Add controller-statistics collector
+* Add webservices_proxy Docker container
+* Add Docker Compose example
 
 ## 0.1.1 / 2020-04-03
 

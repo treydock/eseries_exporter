@@ -59,6 +59,34 @@ If no `timeout` is defined the default is `10`.
 
 This exporter expects to communicate with SANtricity Web Services Proxy API and that your storage controllers are already setup to be accessed through that API.
 
+This repo provides a Docker based approach to running the Web Services Proxy:
+
+```
+cd webservices_proxy
+docker build -t webservices_proxy .
+```
+
+The above Docker container will have `admin:admin` as the credentials and can be run using a command like the following:
+
+```
+docker run -d --rm -it --name webservices_proxy --network host -e ACCEPT_EULA=true \
+-v /var/lib/eseries_webservices_proxy/working:/opt/netapp/webservices_proxy/working \
+webservices_proxy
+```
+
+**NOTE**: During testing it seemed in order for a Docker based proxy to communicate with E-Series controllers the container had to use the host's network.
+
+Example of settig up the Web Services Proxy with an E-Series system.  Replace `PASSWORD` with the password for your E-Series system.  Replace `ID` with the name of your system.  With `IP1` and `IP2` with IP addresses of your controllers for the system.
+
+```
+curl -X POST -u admin:admin "http://localhost:8080/devmgr/v2/storage-systems" \
+-H  "accept: application/json" -H  "Content-Type: application/json" \
+-d '{
+  "id": "ID", "controllerAddresses": [ "IP1" , "IP2" ],
+  "acceptCertificate": true, "validate": false, "password": "PASSWORD"
+}'
+```
+
 ## Docker
 
 Example of running the Docker container
@@ -66,6 +94,14 @@ Example of running the Docker container
 ```
 docker run -d -p 9313:9313 -v "eseries_exporter.yaml:/eseries_exporter.yaml:ro" treydock/eseries_exporter
 ```
+
+This repo also provides a Docker Compose file that can be used to run both the Web Services Proxy and this exporter.
+
+```
+docker-compose up -d
+```
+
+See [dependencies section](#dependencies) for steps necessary to bootstrap the Web Services Proxy.
 
 ## Install
 
