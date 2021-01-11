@@ -24,6 +24,7 @@ drive-statistics | Collect statistics on drives | Disabled
 controller-statistics | Collect controller statistics | Enabled
 storage-systems | Collect status information about storage systems | Enabled
 system-statistics | Collect storage system statistics | Enabled
+hardware-inventory | Collect hardware inventory statuses | Enabled
 
 ## Configuration
 
