@@ -18,6 +18,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"strings"
 
 	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/log/level"
@@ -77,7 +78,7 @@ func NewCollector(target config.Target, logger log.Logger) *EseriesCollector {
 
 func sliceContains(slice []string, str string) bool {
 	for _, s := range slice {
-		if str == s {
+		if strings.EqualFold(s, str) {
 			return true
 		}
 	}

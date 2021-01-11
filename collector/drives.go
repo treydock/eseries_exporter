@@ -59,11 +59,6 @@ type DrivePhysicalLocation struct {
 	TrayRef string `json:"trayRef"`
 }
 
-type Tray struct {
-	TrayRef string `json:"trayRef"`
-	ID      int    `json:"trayId"`
-}
-
 type DrivesCollector struct {
 	Status *prometheus.Desc
 	target config.Target

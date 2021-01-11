@@ -1,0 +1,718 @@
+{
+  "trays": [
+    {
+      "type": "de6600",
+      "orientation": "horizontal",
+      "numControllerSlots": 0,
+      "numDriveSlots": 60,
+      "trayId": 1,
+      "trayRef": "0E50080E520BA7D0000000000000000000000000",
+      "nonRedundantAccess": false,
+      "partNumber": "PN L2-25369-22 ",
+      "serialNumber": "SN SV53639622  ",
+      "vendorName": "VN LSI     ",
+      "manufacturerDate": "1438387200",
+      "fruType": "FT MIDPLANE",
+      "trayIDMismatch": false,
+      "trayIDConflict": false,
+      "esmVersionMismatch": false,
+      "esmMiswire": false,
+      "drvMHSpeedMismatch": false,
+      "unsupportedTray": false,
+      "workingChannel": -1,
+      "maxSpeed": "speedUnknown",
+      "trayTechnologyType": "unknown",
+      "esmGroupError": false,
+      "uncertifiedTray": false,
+      "locateTray": true,
+      "esmHardwareMismatch": false,
+      "hasConfigurableTrayId": true,
+      "frontEndInterfaceTechnology": "sas",
+      "driveTechnologies": [
+        "sas"
+      ],
+      "numDriveCompartments": 5,
+      "numDriveSlotsPerCompartment": 12,
+      "trayAttributes": [
+        {
+          "attributeId": "serviceTag",
+          "attributeValue": ""
+        },
+        {
+          "attributeId": "assetTag",
+          "attributeValue": ""
+        },
+        {
+          "attributeId": "chassisName",
+          "attributeValue": ""
+        },
+        {
+          "attributeId": "spinUpDelay",
+          "attributeValue": "5"
+        },
+        {
+          "attributeId": "spinUpCount",
+          "attributeValue": "5"
+        }
+      ],
+      "isMisconfigured": false,
+      "esmFactoryDefaultsMismatch": false,
+      "physicalLocation": {
+        "trayRef": "0E50080E520BA7D0000000000000000000000000",
+        "slot": 1,
+        "locationParent": {
+          "refType": "genericTyped",
+          "controllerRef": null,
+          "symbolRef": null,
+          "typedReference": {
+            "componentType": "storageArray",
+            "symbolRef": "0000000000000000000000000000000000000000"
+          }
+        },
+        "locationPosition": 1,
+        "label": ""
+      },
+      "numDrawers": 5,
+      "driveLayout": {
+        "driveOrientation": "horizontal",
+        "numRows": 3,
+        "numColumns": 4,
+        "primaryTraversal": "frontToBack",
+        "secondaryTraversal": "leftToRight"
+      },
+      "factoryDefaultsData": {
+        "factoryDefaultsVersion": "FD 01.03 11/18/2010 MIN_VER=01",
+        "isSupported": true
+      },
+      "locateInProgress": false,
+      "hasTrayIdentityIndicator": false,
+      "oemPartNumber": null,
+      "trayPositionIndex": -1,
+      "id": "0E50080E520BA7D0000000000000000000000000"
+    },
+    {
+      "type": "de6600",
+      "orientation": "horizontal",
+      "numControllerSlots": 0,
+      "numDriveSlots": 60,
+      "trayId": 0,
+      "trayRef": "0E50080E5209C1A0000000000000000000000000",
+      "nonRedundantAccess": false,
+      "partNumber": "PN L2-25369-22 ",
+      "serialNumber": "SN SV50207831  ",
+      "vendorName": "VN LSI     ",
+      "manufacturerDate": "0",
+      "fruType": "FT MIDPLANE",
+      "trayIDMismatch": false,
+      "trayIDConflict": false,
+      "esmVersionMismatch": false,
+      "esmMiswire": false,
+      "drvMHSpeedMismatch": false,
+      "unsupportedTray": false,
+      "workingChannel": -1,
+      "maxSpeed": "speedUnknown",
+      "trayTechnologyType": "unknown",
+      "esmGroupError": false,
+      "uncertifiedTray": false,
+      "locateTray": true,
+      "esmHardwareMismatch": false,
+      "hasConfigurableTrayId": true,
+      "frontEndInterfaceTechnology": "sas",
+      "driveTechnologies": [
+        "sas"
+      ],
+      "numDriveCompartments": 5,
+      "numDriveSlotsPerCompartment": 12,
+      "trayAttributes": [
+        {
+          "attributeId": "serviceTag",
+          "attributeValue": ""
+        },
+        {
+          "attributeId": "assetTag",
+          "attributeValue": ""
+        },
+        {
+          "attributeId": "chassisName",
+          "attributeValue": ""
+        },
+        {
+          "attributeId": "spinUpDelay",
+          "attributeValue": "5"
+        },
+        {
+          "attributeId": "spinUpCount",
+          "attributeValue": "5"
+        }
+      ],
+      "isMisconfigured": false,
+      "esmFactoryDefaultsMismatch": false,
+      "physicalLocation": {
+        "trayRef": "0E50080E5209C1A0000000000000000000000000",
+        "slot": 1,
+        "locationParent": {
+          "refType": "genericTyped",
+          "controllerRef": null,
+          "symbolRef": null,
+          "typedReference": {
+            "componentType": "storageArray",
+            "symbolRef": "0000000000000000000000000000000000000000"
+          }
+        },
+        "locationPosition": 1,
+        "label": ""
+      },
+      "numDrawers": 5,
+      "driveLayout": {
+        "driveOrientation": "horizontal",
+        "numRows": 3,
+        "numColumns": 4,
+        "primaryTraversal": "frontToBack",
+        "secondaryTraversal": "leftToRight"
+      },
+      "factoryDefaultsData": {
+        "factoryDefaultsVersion": "FD 01.03 11/18/2010 MIN_VER=01",
+        "isSupported": true
+      },
+      "locateInProgress": false,
+      "hasTrayIdentityIndicator": false,
+      "oemPartNumber": null,
+      "trayPositionIndex": -1,
+      "id": "0E50080E5209C1A0000000000000000000000000"
+    },
+    {
+      "type": "de6600",
+      "orientation": "horizontal",
+      "numControllerSlots": 2,
+      "numDriveSlots": 60,
+      "trayId": 99,
+      "trayRef": "0E00000000000000000000000000000000000000",
+      "nonRedundantAccess": false,
+      "partNumber": "PN L2-25369-22 ",
+      "serialNumber": "SN SV50623015  ",
+      "vendorName": "VN LSI     ",
+      "manufacturerDate": "1422748800",
+      "fruType": "FT MIDPLANE",
+      "trayIDMismatch": false,
+      "trayIDConflict": false,
+      "esmVersionMismatch": false,
+      "esmMiswire": false,
+      "drvMHSpeedMismatch": false,
+      "unsupportedTray": false,
+      "workingChannel": -1,
+      "maxSpeed": "speedUnknown",
+      "trayTechnologyType": "unknown",
+      "esmGroupError": false,
+      "uncertifiedTray": false,
+      "locateTray": true,
+      "esmHardwareMismatch": false,
+      "hasConfigurableTrayId": true,
+      "frontEndInterfaceTechnology": "fc",
+      "driveTechnologies": [
+        "sas"
+      ],
+      "numDriveCompartments": 5,
+      "numDriveSlotsPerCompartment": 12,
+      "trayAttributes": [
+        {
+          "attributeId": "serviceTag",
+          "attributeValue": ""
+        },
+        {
+          "attributeId": "assetTag",
+          "attributeValue": ""
+        },
+        {
+          "attributeId": "chassisName",
+          "attributeValue": "Wembley SAS2 60HDD Midplane"
+        },
+        {
+          "attributeId": "spinUpDelay",
+          "attributeValue": "5"
+        },
+        {
+          "attributeId": "spinUpCount",
+          "attributeValue": "5"
+        }
+      ],
+      "isMisconfigured": false,
+      "esmFactoryDefaultsMismatch": false,
+      "physicalLocation": {
+        "trayRef": "0E00000000000000000000000000000000000000",
+        "slot": 1,
+        "locationParent": {
+          "refType": "genericTyped",
+          "controllerRef": null,
+          "symbolRef": null,
+          "typedReference": {
+            "componentType": "storageArray",
+            "symbolRef": "0000000000000000000000000000000000000000"
+          }
+        },
+        "locationPosition": 1,
+        "label": ""
+      },
+      "numDrawers": 5,
+      "driveLayout": {
+        "driveOrientation": "horizontal",
+        "numRows": 3,
+        "numColumns": 4,
+        "primaryTraversal": "frontToBack",
+        "secondaryTraversal": "leftToRight"
+      },
+      "factoryDefaultsData": {
+        "factoryDefaultsVersion": "FD 01.01 03/15/2010 MIN_VER=01",
+        "isSupported": true
+      },
+      "locateInProgress": false,
+      "hasTrayIdentityIndicator": false,
+      "oemPartNumber": null,
+      "trayPositionIndex": -1,
+      "id": "0E00000000000000000000000000000000000000"
+    }
+  ],
+  "batteries": [
+    {
+      "batteryRef": "0900000000000000000001000000000000000000",
+      "status": "optimal",
+      "physicalLocation": {
+        "trayRef": "0E00000000000000000000000000000000000000",
+        "slot": 1,
+        "locationParent": {
+          "refType": "controller",
+          "controllerRef": "070000000000000000000001",
+          "symbolRef": null,
+          "typedReference": null
+        },
+        "locationPosition": 1,
+        "label": ""
+      },
+      "batteryAge": 1852,
+      "batteryLifeRemaining": -1,
+      "batteryTypeData": {
+        "batteryType": "dualIndividualFrus",
+        "cruParentController": null,
+        "parentController": "070000000000000000000001"
+      },
+      "reserved1": "0000000000000000",
+      "reserved2": "",
+      "manufacturerDate": "1430438400",
+      "vendorName": "VN LSI     ",
+      "vendorPN": "PN 43543-10    ",
+      "vendorSN": "SN SY52251524SO",
+      "fruType": "FT IBATTERY",
+      "rtrAttributes": {
+        "cruType": "unknown",
+        "parentCru": null,
+        "rtrAttributeData": null
+      },
+      "repairPolicy": {
+        "removalData": {
+          "removalMethod": "parent",
+          "rtrAttributes": null
+        },
+        "replacementMethod": "self"
+      },
+      "batteryCanExpire": false,
+      "automaticAgeReset": true,
+      "learnCycleData": {
+        "lastBatteryLearnCycle": "1606348801",
+        "nextBatteryLearnCycle": "1611187200",
+        "batteryLearnCycleInterval": 8
+      },
+      "smartBatteryData": {
+        "lastBatteryLearnCycle": "1606348801",
+        "nextBatteryLearnCycle": "1611187200",
+        "batteryLearnCycleInterval": 8
+      },
+      "id": "0900000000000000000001000000000000000000"
+    },
+    {
+      "batteryRef": "0900000000000000000002000000000000000000",
+      "status": "foo",
+      "physicalLocation": {
+        "trayRef": "0E00000000000000000000000000000000000000",
+        "slot": 2,
+        "locationParent": {
+          "refType": "controller",
+          "controllerRef": "070000000000000000000002",
+          "symbolRef": null,
+          "typedReference": null
+        },
+        "locationPosition": 1,
+        "label": ""
+      },
+      "batteryAge": 1852,
+      "batteryLifeRemaining": -1,
+      "batteryTypeData": {
+        "batteryType": "dualIndividualFrus",
+        "cruParentController": null,
+        "parentController": "070000000000000000000002"
+      },
+      "reserved1": "0000000000000000",
+      "reserved2": "",
+      "manufacturerDate": "1430438400",
+      "vendorName": "VN LSI     ",
+      "vendorPN": "PN 43543-10    ",
+      "vendorSN": "SN SY52251328SO",
+      "fruType": "FT IBATTERY",
+      "rtrAttributes": {
+        "cruType": "unknown",
+        "parentCru": null,
+        "rtrAttributeData": null
+      },
+      "repairPolicy": {
+        "removalData": {
+          "removalMethod": "parent",
+          "rtrAttributes": null
+        },
+        "replacementMethod": "self"
+      },
+      "batteryCanExpire": false,
+      "automaticAgeReset": true,
+      "learnCycleData": {
+        "lastBatteryLearnCycle": "1606348801",
+        "nextBatteryLearnCycle": "1611187200",
+        "batteryLearnCycleInterval": 8
+      },
+      "smartBatteryData": {
+        "lastBatteryLearnCycle": "1606348801",
+        "nextBatteryLearnCycle": "1611187200",
+        "batteryLearnCycleInterval": 8
+      },
+      "id": "0900000000000000000002000000000000000000"
+    }
+  ],
+  "fans": [
+    {
+      "fanRef": "0800000000000000000001000000000000000000",
+      "status": "optimal",
+      "physicalLocation": {
+        "trayRef": "0E00000000000000000000000000000000000000",
+        "slot": 1,
+        "locationParent": {
+          "refType": "genericTyped",
+          "controllerRef": null,
+          "symbolRef": null,
+          "typedReference": {
+            "componentType": "supportCru",
+            "symbolRef": "1C00000000000000000001000000000000000000"
+          }
+        },
+        "locationPosition": 1,
+        "label": ""
+      },
+      "reserved1": "0000000000000000",
+      "reserved2": "",
+      "rtrAttributes": {
+        "cruType": "aggregate",
+        "parentCru": {
+          "type": "supportCru",
+          "parentController": null,
+          "parentEsm": null,
+          "parentFan": null,
+          "parentInterconnectCru": null,
+          "parentSupportCru": "1C00000000000000000001000000000000000000",
+          "parentDrawer": null
+        },
+        "rtrAttributeData": null
+      },
+      "repairPolicy": {
+        "removalData": {
+          "removalMethod": "parent",
+          "rtrAttributes": null
+        },
+        "replacementMethod": "parent"
+      },
+      "id": "0800000000000000000001000000000000000000"
+    },
+    {
+      "fanRef": "0800000000000000000002000000000000000000",
+      "status": "foo",
+      "physicalLocation": {
+        "trayRef": "0E00000000000000000000000000000000000000",
+        "slot": 2,
+        "locationParent": {
+          "refType": "genericTyped",
+          "controllerRef": null,
+          "symbolRef": null,
+          "typedReference": {
+            "componentType": "supportCru",
+            "symbolRef": "1C00000000000000000001000000000000000000"
+          }
+        },
+        "locationPosition": 2,
+        "label": ""
+      },
+      "reserved1": "0000000000000000",
+      "reserved2": "",
+      "rtrAttributes": {
+        "cruType": "aggregate",
+        "parentCru": {
+          "type": "supportCru",
+          "parentController": null,
+          "parentEsm": null,
+          "parentFan": null,
+          "parentInterconnectCru": null,
+          "parentSupportCru": "1C00000000000000000001000000000000000000",
+          "parentDrawer": null
+        },
+        "rtrAttributeData": null
+      },
+      "repairPolicy": {
+        "removalData": {
+          "removalMethod": "parent",
+          "rtrAttributes": null
+        },
+        "replacementMethod": "parent"
+      },
+      "id": "0800000000000000000002000000000000000000"
+    }
+  ],
+  "powerSupplies": [
+    {
+      "powerSupplyRef": "0A00000000000000000001000000000000000000",
+      "status": "optimal",
+      "physicalLocation": {
+        "trayRef": "0E00000000000000000000000000000000000000",
+        "slot": 1,
+        "locationParent": {
+          "refType": "genericTyped",
+          "controllerRef": null,
+          "symbolRef": null,
+          "typedReference": {
+            "componentType": "supportCru",
+            "symbolRef": "1C00000000000000000002000000000000000000"
+          }
+        },
+        "locationPosition": 1,
+        "label": ""
+      },
+      "partNumber": "PN 44128-27    ",
+      "serialNumber": "SN AAXT15450975",
+      "vendorName": "VN LSI     ",
+      "manufacturerDate": "1446336000",
+      "fruType": "FT PWRSUPLY",
+      "reserved1": "0000000000000000",
+      "reserved2": "",
+      "rtrAttributes": {
+        "cruType": "aggregate",
+        "parentCru": {
+          "type": "supportCru",
+          "parentController": null,
+          "parentEsm": null,
+          "parentFan": null,
+          "parentInterconnectCru": null,
+          "parentSupportCru": "1C00000000000000000002000000000000000000",
+          "parentDrawer": null
+        },
+        "rtrAttributeData": null
+      },
+      "repairPolicy": {
+        "removalData": {
+          "removalMethod": "parent",
+          "rtrAttributes": null
+        },
+        "replacementMethod": "parent"
+      },
+      "firmwareRevision": "02.47",
+      "manufacturingDeviceCode": 0,
+      "id": "0A00000000000000000001000000000000000000"
+    },
+    {
+      "powerSupplyRef": "0A00000000000000000002000000000000000000",
+      "status": "foo",
+      "physicalLocation": {
+        "trayRef": "0E00000000000000000000000000000000000000",
+        "slot": 2,
+        "locationParent": {
+          "refType": "genericTyped",
+          "controllerRef": null,
+          "symbolRef": null,
+          "typedReference": {
+            "componentType": "supportCru",
+            "symbolRef": "1C00000000000000000003000000000000000000"
+          }
+        },
+        "locationPosition": 1,
+        "label": ""
+      },
+      "partNumber": "PN 44128-27    ",
+      "serialNumber": "SN AAXT15450973",
+      "vendorName": "VN LSI     ",
+      "manufacturerDate": "1446336000",
+      "fruType": "FT PWRSUPLY",
+      "reserved1": "0000000000000000",
+      "reserved2": "",
+      "rtrAttributes": {
+        "cruType": "aggregate",
+        "parentCru": {
+          "type": "supportCru",
+          "parentController": null,
+          "parentEsm": null,
+          "parentFan": null,
+          "parentInterconnectCru": null,
+          "parentSupportCru": "1C00000000000000000003000000000000000000",
+          "parentDrawer": null
+        },
+        "rtrAttributeData": null
+      },
+      "repairPolicy": {
+        "removalData": {
+          "removalMethod": "parent",
+          "rtrAttributes": null
+        },
+        "replacementMethod": "parent"
+      },
+      "firmwareRevision": "02.47",
+      "manufacturingDeviceCode": 0,
+      "id": "0A00000000000000000002000000000000000000"
+    }
+  ],
+  "cacheMemoryDimms": [
+    {
+      "cacheMemoryDimmRef": "2600000000000000000001000000000000000000",
+      "status": "optimal",
+      "capacityInMegabytes": 4096,
+      "serialNumber": "280962889",
+      "partNumber": "",
+      "oemPartNumber": "",
+      "manufacturerPartNumber": "18KDF51272PDZ1G6K1",
+      "manufacturer": "Micron",
+      "manufactureDate": "1444867200",
+      "repairPolicy": {
+        "removalData": {
+          "removalMethod": "parent",
+          "rtrAttributes": null
+        },
+        "replacementMethod": "self"
+      },
+      "physicalLocation": {
+        "trayRef": "0E00000000000000000000000000000000000000",
+        "slot": 1,
+        "locationParent": {
+          "refType": "controller",
+          "controllerRef": "070000000000000000000001",
+          "symbolRef": null,
+          "typedReference": null
+        },
+        "locationPosition": 1,
+        "label": "1"
+      },
+      "shared": true,
+      "revisionCode": "30783442203078333100"
+    },
+    {
+      "cacheMemoryDimmRef": "2600000000000000000002000000000000000000",
+      "status": "foo",
+      "capacityInMegabytes": 4096,
+      "serialNumber": "280962890",
+      "partNumber": "",
+      "oemPartNumber": "",
+      "manufacturerPartNumber": "18KDF51272PDZ1G6K1",
+      "manufacturer": "Micron",
+      "manufactureDate": "1444867200",
+      "repairPolicy": {
+        "removalData": {
+          "removalMethod": "parent",
+          "rtrAttributes": null
+        },
+        "replacementMethod": "self"
+      },
+      "physicalLocation": {
+        "trayRef": "0E00000000000000000000000000000000000000",
+        "slot": 2,
+        "locationParent": {
+          "refType": "controller",
+          "controllerRef": "070000000000000000000001",
+          "symbolRef": null,
+          "typedReference": null
+        },
+        "locationPosition": 2,
+        "label": "2"
+      },
+      "shared": true,
+      "revisionCode": "30783442203078333100"
+    }
+  ],
+  "thermalSensors": [
+    {
+      "thermalSensorRef": "0B00000000000000000002000000000000000000",
+      "status": "foo",
+      "physicalLocation": {
+        "trayRef": "0E00000000000000000000000000000000000000",
+        "slot": 2,
+        "locationParent": {
+          "refType": "controller",
+          "controllerRef": "070000000000000000000001",
+          "symbolRef": null,
+          "typedReference": null
+        },
+        "locationPosition": 2,
+        "label": "inlet"
+      },
+      "reserved1": "0000000000000000",
+      "reserved2": "",
+      "rtrAttributes": {
+        "cruType": "aggregate",
+        "parentCru": {
+          "type": "controller",
+          "parentController": "070000000000000000000001",
+          "parentEsm": null,
+          "parentFan": null,
+          "parentInterconnectCru": null,
+          "parentSupportCru": null,
+          "parentDrawer": null
+        },
+        "rtrAttributeData": null
+      },
+      "repairPolicy": {
+        "removalData": {
+          "removalMethod": "parent",
+          "rtrAttributes": null
+        },
+        "replacementMethod": "parent"
+      },
+      "id": "0B00000000000000000002000000000000000000"
+    },
+    {
+      "thermalSensorRef": "0B00000000000000000001000000000000000000",
+      "status": "optimal",
+      "physicalLocation": {
+        "trayRef": "0E00000000000000000000000000000000000000",
+        "slot": 1,
+        "locationParent": {
+          "refType": "controller",
+          "controllerRef": "070000000000000000000001",
+          "symbolRef": null,
+          "typedReference": null
+        },
+        "locationPosition": 1,
+        "label": "CPU"
+      },
+      "reserved1": "0000000000000000",
+      "reserved2": "",
+      "rtrAttributes": {
+        "cruType": "aggregate",
+        "parentCru": {
+          "type": "controller",
+          "parentController": "070000000000000000000001",
+          "parentEsm": null,
+          "parentFan": null,
+          "parentInterconnectCru": null,
+          "parentSupportCru": null,
+          "parentDrawer": null
+        },
+        "rtrAttributeData": null
+      },
+      "repairPolicy": {
+        "removalData": {
+          "removalMethod": "parent",
+          "rtrAttributes": null
+        },
+        "replacementMethod": "parent"
+      },
+      "id": "0B00000000000000000001000000000000000000"
+    }
+  ]
+}
