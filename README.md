@@ -88,6 +88,15 @@ curl -X POST -u admin:admin "http://localhost:8080/devmgr/v2/storage-systems" \
 }'
 ```
 
+If your storage systems have UUID style IDs this is a way to query the names for each ID:
+
+```
+$ curl -u admin:admin http://localhost:8080/devmgr/v2/storage-systems 2>/dev/null | \
+  jq -r '.[] | "ID: \(.id)\tname: \(.name)"'
+ID: f0d2fadc-3e16-46c5-b62e-c9ab6d430b50    name: eseries1
+ID: 25db8d36-6732-495d-b693-8add202750d6    name: eseries2
+```
+
 ## Docker
 
 Example of running the Docker container
@@ -170,4 +179,29 @@ The following example assumes this exporter is running on the Prometheus server 
   static_configs:
   - targets:
     - localhost:9313
+```
+
+The following is an example if your E-Series web proxy is using UUIDs or other cryptic IDs:
+
+```yaml
+- job_name: eseries
+  metrics_path: /eseries
+  static_configs:
+  - targets:
+    - f0d2fadc-3e16-46c5-b62e-c9ab6d430b50
+    labels:
+      name: eseries1
+  - targets:
+    - 25db8d36-6732-495d-b693-8add202750d6
+    labels:
+      name: eseries2
+  relabel_configs:
+  - source_labels: [__address__]
+    target_label: __param_target
+  - target_label: __address__
+    replacement: 127.0.0.1:9313
+  - source_labels: [name]
+    target_label: instance
+  - regex: '^(name)$'
+    action: labeldrop
 ```
