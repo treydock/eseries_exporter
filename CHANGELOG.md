@@ -1,3 +1,10 @@
+## Unreleased
+
+### Changes
+
+* Update to Go 1.16
+* Update Go module dependencies
+
 ## 1.1.0 / 2021-03-19
 
 ### Changes
