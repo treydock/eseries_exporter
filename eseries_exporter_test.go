@@ -15,7 +15,7 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"os"
@@ -32,7 +32,7 @@ const (
 )
 
 func TestMain(m *testing.M) {
-	fixtureData, err := ioutil.ReadFile("collector/testdata/drives.json")
+	fixtureData, err := os.ReadFile("collector/testdata/drives.json")
 	if err != nil {
 		fmt.Printf("Error loading fixture data: %s", err.Error())
 		os.Exit(1)
@@ -89,7 +89,7 @@ func queryExporter(param string, want int) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	b, err := ioutil.ReadAll(resp.Body)
+	b, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return "", err
 	}
