@@ -23,7 +23,6 @@
 package collector
 
 import (
-	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
@@ -37,15 +36,15 @@ import (
 )
 
 func TestDriveStatisticsCollector(t *testing.T) {
-	analyzedDriveData, err := ioutil.ReadFile("testdata/analysed-drive-statistics.json")
+	analyzedDriveData, err := os.ReadFile("testdata/analysed-drive-statistics.json")
 	if err != nil {
 		t.Fatalf("Error loading fixture data: %s", err.Error())
 	}
-	driveData, err := ioutil.ReadFile("testdata/drive-statistics.json")
+	driveData, err := os.ReadFile("testdata/drive-statistics.json")
 	if err != nil {
 		t.Fatalf("Error loading fixture data: %s", err.Error())
 	}
-	inventoryData, err := ioutil.ReadFile("testdata/drives.json")
+	inventoryData, err := os.ReadFile("testdata/drives.json")
 	if err != nil {
 		t.Fatalf("Error loading fixture data: %s", err.Error())
 	}
