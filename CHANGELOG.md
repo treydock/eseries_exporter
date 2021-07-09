@@ -1,4 +1,4 @@
-## Unreleased
+## 1.2.1 / 2021-07-09
 
 * Avoid errors if duplicate drives are encountered
 
