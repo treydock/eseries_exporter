@@ -96,11 +96,19 @@ func (c *DrivesCollector) Collect(ch chan<- prometheus.Metric) {
 	for _, t := range metrics.Trays {
 		trays[t.TrayRef] = t.ID
 	}
+	var ids []string
 	for _, d := range metrics.Drives {
 		if trayId, ok := trays[d.PhysicalLocation.TrayRef]; ok {
 			d.TrayID = strconv.Itoa(trayId)
 		}
 		d.Slot = strconv.Itoa(d.PhysicalLocation.Slot)
+		id := fmt.Sprintf("%s-%s", d.TrayID, d.Slot)
+		if sliceContains(ids, id) {
+			level.Error(c.logger).Log("msg", "Duplicate drive entry detected, skipping.", "tray", d.TrayID, "slot", d.Slot, "status", d.Status)
+			errorMetric = 1
+			continue
+		}
+		ids = append(ids, id)
 		for _, driveStatus := range driveStatuses {
 			var value float64
 			if driveStatus == d.Status {
