@@ -21,7 +21,6 @@ import (
 	"os"
 	"strings"
 	"testing"
-	"time"
 
 	"github.com/go-kit/kit/log"
 	"github.com/treydock/eseries_exporter/config"
@@ -31,7 +30,7 @@ const (
 	address = "localhost:19313"
 )
 
-func TestMain(m *testing.M) {
+func SetupServer() *config.Config {
 	fixtureData, err := os.ReadFile("collector/testdata/drives.json")
 	if err != nil {
 		fmt.Printf("Error loading fixture data: %s", err.Error())
@@ -40,16 +39,41 @@ func TestMain(m *testing.M) {
 	server := httptest.NewServer(http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {
 		_, _ = rw.Write(fixtureData)
 	}))
-	defer server.Close()
+	sslServer := httptest.NewTLSServer(http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {
+		_, _ = rw.Write(fixtureData)
+	}))
 	module := &config.Module{
 		User:       "test",
 		Password:   "test",
 		Collectors: []string{"drives"},
 		ProxyURL:   server.URL,
 	}
+	sslModule := &config.Module{
+		User:        "test",
+		Password:    "test",
+		Collectors:  []string{"drives"},
+		ProxyURL:    sslServer.URL,
+		RootCA:      "collector/testdata/rootCA.crt",
+		InsecureSSL: true,
+	}
+	sslBadModule := &config.Module{
+		User:        "test",
+		Password:    "test",
+		Collectors:  []string{"drives"},
+		ProxyURL:    sslServer.URL,
+		RootCA:      "/dne",
+		InsecureSSL: true,
+	}
 	c := &config.Config{}
 	c.Modules = make(map[string]*config.Module)
 	c.Modules["default"] = module
+	c.Modules["ssl"] = sslModule
+	c.Modules["ssl-error"] = sslBadModule
+	return c
+}
+
+func TestMetricsHandler(t *testing.T) {
+	c := SetupServer()
 	w := log.NewSyncWriter(os.Stderr)
 	logger := log.NewLogfmtLogger(w)
 	go func() {
@@ -59,14 +83,6 @@ func TestMain(m *testing.M) {
 			os.Exit(1)
 		}
 	}()
-	time.Sleep(1 * time.Second)
-
-	exitVal := m.Run()
-
-	os.Exit(exitVal)
-}
-
-func TestMetricsHandler(t *testing.T) {
 	body, err := queryExporter("target=test1", http.StatusOK)
 	if err != nil {
 		t.Fatalf("Unexpected error GET /eseries: %s", err.Error())
@@ -74,13 +90,19 @@ func TestMetricsHandler(t *testing.T) {
 	if !strings.Contains(body, "eseries_exporter_collect_error{collector=\"drives\"} 0") {
 		t.Errorf("Unexpected value for eseries_exporter_collect_error")
 	}
-}
 
-func TestMetricsHandlerNoTarget(t *testing.T) {
+	body, err = queryExporter("target=test1&module=ssl", http.StatusOK)
+	if err != nil {
+		t.Fatalf("Unexpected error GET /eseries: %s", err.Error())
+	}
+	if !strings.Contains(body, "eseries_exporter_collect_error{collector=\"drives\"} 0") {
+		t.Errorf("Unexpected value for eseries_exporter_collect_error")
+	}
+
+	_, _ = queryExporter("target=test1&module=ssl-error", http.StatusBadRequest)
+
 	_, _ = queryExporter("", http.StatusBadRequest)
-}
 
-func TestMetricsHandlerBadModule(t *testing.T) {
 	_, _ = queryExporter("module=dne", http.StatusNotFound)
 }
 

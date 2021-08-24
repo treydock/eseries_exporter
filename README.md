@@ -45,6 +45,13 @@ modules:
     collectors:
       - drives
       - storage-systems
+  ssl:
+    user: monitor
+    password: secret
+    proxy_url: https://proxy.example.com
+    root_ca: /etc/pki/tls/root.pem
+    insecure_ssl: false
+    timeout: 10
 ```
 
 This exporter could then be queried via one of these two commands below.  The `eseries2` target will only run the `drives` and `storage-systems` collectors.
@@ -54,7 +61,9 @@ curl http://localhost:9310/eseries?target=eseries1
 curl http://localhost:9310/eseries?target=eseries2&module=status-only
 ```
 
-If no `timeout` is defined the default is `10`. 
+If no `timeout` is defined the default is `10`.
+
+If the HTTP schema used for `proxy_url` is `https` then the exporter will attempt to use the system CA truststore as well as any root CA specified with `root_ca` option.  By default certificate verification is enabled, set `insecure_ssl` to disable SSL verification.
 
 ## Dependencies
 

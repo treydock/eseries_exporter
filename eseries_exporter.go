@@ -14,6 +14,8 @@
 package main
 
 import (
+	"crypto/tls"
+	"crypto/x509"
 	"fmt"
 	"net/http"
 	"net/url"
@@ -62,14 +64,40 @@ func metricsHandler(c *config.Config, logger log.Logger) http.HandlerFunc {
 			ProxyURL:   module.ProxyURL,
 			Collectors: module.Collectors,
 		}
-		if url, err := url.Parse(module.ProxyURL); err != nil {
+		proxyURL, err := url.Parse(module.ProxyURL)
+		if err != nil {
 			http.Error(w, fmt.Sprintf("Unable to parse ProxyURL %s", module.ProxyURL), http.StatusNotFound)
 			return
 		} else {
-			target.BaseURL = url
+			target.BaseURL = proxyURL
 		}
 		httpClient := &http.Client{
 			Timeout: time.Duration(module.Timeout) * time.Second,
+		}
+		if proxyURL.Scheme == "https" {
+			level.Debug(logger).Log("msg", "Setting up SSL transport", "url", module.ProxyURL)
+			rootCAs, err := x509.SystemCertPool()
+			if err != nil {
+				level.Error(logger).Log("msg", "Error loading system cert pool, creating empty cert pool", "err", err)
+				rootCAs = x509.NewCertPool()
+			}
+			if module.RootCA != "" {
+				certs, err := os.ReadFile(module.RootCA)
+				if err != nil {
+					level.Error(logger).Log("msg", "Error loading root CA", "rootCA", module.RootCA, "err", err)
+					http.Error(w, "Error loading root CA", http.StatusBadRequest)
+					return
+				}
+				if ok := rootCAs.AppendCertsFromPEM(certs); !ok {
+					level.Error(logger).Log("msg", "Error appending root CA to pool", "rootCA", module.RootCA, "err", err)
+				}
+			}
+			tlsConfig := &tls.Config{
+				InsecureSkipVerify: module.InsecureSSL,
+				RootCAs:            rootCAs,
+			}
+			tlsTransport := &http.Transport{TLSClientConfig: tlsConfig}
+			httpClient.Transport = tlsTransport
 		}
 		target.HttpClient = httpClient
 		eseriesCollector := collector.NewCollector(target, logger)
