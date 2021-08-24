@@ -56,10 +56,19 @@ func SetupServer() *config.Config {
 		RootCA:      "collector/testdata/rootCA.crt",
 		InsecureSSL: true,
 	}
+	sslBadModule := &config.Module{
+		User:        "test",
+		Password:    "test",
+		Collectors:  []string{"drives"},
+		ProxyURL:    sslServer.URL,
+		RootCA:      "/dne",
+		InsecureSSL: true,
+	}
 	c := &config.Config{}
 	c.Modules = make(map[string]*config.Module)
 	c.Modules["default"] = module
 	c.Modules["ssl"] = sslModule
+	c.Modules["ssl-error"] = sslBadModule
 	return c
 }
 
@@ -89,6 +98,8 @@ func TestMetricsHandler(t *testing.T) {
 	if !strings.Contains(body, "eseries_exporter_collect_error{collector=\"drives\"} 0") {
 		t.Errorf("Unexpected value for eseries_exporter_collect_error")
 	}
+
+	_, _ = queryExporter("target=test1&module=ssl-error", http.StatusBadRequest)
 
 	_, _ = queryExporter("", http.StatusBadRequest)
 

@@ -64,17 +64,18 @@ func metricsHandler(c *config.Config, logger log.Logger) http.HandlerFunc {
 			ProxyURL:   module.ProxyURL,
 			Collectors: module.Collectors,
 		}
-		base_url, err := url.Parse(module.ProxyURL)
+		proxyURL, err := url.Parse(module.ProxyURL)
 		if err != nil {
 			http.Error(w, fmt.Sprintf("Unable to parse ProxyURL %s", module.ProxyURL), http.StatusNotFound)
 			return
 		} else {
-			target.BaseURL = base_url
+			target.BaseURL = proxyURL
 		}
 		httpClient := &http.Client{
 			Timeout: time.Duration(module.Timeout) * time.Second,
 		}
-		if base_url.Scheme == "https" {
+		if proxyURL.Scheme == "https" {
+			level.Debug(logger).Log("msg", "Setting up SSL transport", "url", module.ProxyURL)
 			rootCAs, err := x509.SystemCertPool()
 			if err != nil {
 				level.Error(logger).Log("msg", "Error loading system cert pool, creating empty cert pool", "err", err)
