@@ -33,11 +33,13 @@ type SafeConfig struct {
 }
 
 type Module struct {
-	User       string   `yaml:"user"`
-	Password   string   `yaml:"password"`
-	ProxyURL   string   `yaml:"proxy_url"`
-	Collectors []string `yaml:"collectors"`
-	Timeout    int      `yaml:"timeout"`
+	User        string   `yaml:"user"`
+	Password    string   `yaml:"password"`
+	ProxyURL    string   `yaml:"proxy_url"`
+	Collectors  []string `yaml:"collectors"`
+	Timeout     int      `yaml:"timeout"`
+	InsecureSSL bool     `yaml:"insecure_ssl"`
+	RootCA      string   `yaml:"root_ca"`
 }
 
 type Target struct {

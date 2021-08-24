@@ -1,3 +1,7 @@
+## 1.3.0-rc.0 / 2021-08-24
+
+* Improved SSL support for communicating with proxy API
+
 ## 1.2.1 / 2021-07-09
 
 * Avoid errors if duplicate drives are encountered
