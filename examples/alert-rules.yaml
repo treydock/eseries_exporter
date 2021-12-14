@@ -1,0 +1,83 @@
+groups:
+- name: eseries
+  rules:
+  - alert: ESeriesCollectErrors
+    expr: eseries_exporter_collect_error == 1
+    for: 30m
+    labels:
+      severity: warning
+      alertgroup: eseries
+    annotations:
+      title: E-Series exporter {{ $labels.instance }} has errors
+      description: E-Series exporter {{ $labels.instance }} has errors with collector {{ $labels.collector }}
+  - alert: ESeriesStorageSystemHealth
+    expr: eseries_storage_system_status{status!~"(optimal)"} == 1
+    for: 5m
+    labels:
+      severity: warning
+      alertgroup: eseries
+      notify: 12h
+    annotations:
+      title: E-Series storage system {{ $labels.instance }} is not healthy
+      description: E-Series storage system {{ $labels.instance }} has status of {{ $labels.status }}
+  - alert: ESeriesDriveHealth
+    expr: eseries_drive_status{status!~"(optimal)"} == 1
+    for: 5m
+    labels:
+      severity: warning
+      alertgroup: eseries
+      notify: 12h
+    annotations:
+      title: E-Series drive on {{ $labels.instance }} is not healthy
+      description: E-Series drive on {{ $labels.instance }} is {{ $labels.status }} (tray={{ $labels.tray }},slot={{ $labels.slot }})
+  - alert: ESeriesBatteryHealth
+    expr: eseries_battery_status{status!~"(optimal|learning)"} == 1
+    for: 5m
+    labels:
+      severity: warning
+      alertgroup: eseries
+      notify: 12h
+    annotations:
+      title: E-Series battery on {{ $labels.instance }} is not healthy
+      description: E-Series battery on {{ $labels.instance }} is {{ $labels.status }} (tray={{ $labels.tray }},slot={{ $labels.slot }})
+  - alert: ESeriesFanHealth
+    expr: eseries_fan_status{status!~"(optimal)"} == 1
+    for: 5m
+    labels:
+      severity: warning
+      alertgroup: eseries
+      notify: 12h
+    annotations:
+      title: E-Series fan on {{ $labels.instance }} is not healthy
+      description: E-Series fan on {{ $labels.instance }} is {{ $labels.status }} (tray={{ $labels.tray }},slot={{ $labels.slot }})
+  - alert: ESeriesPowerSupplyHealth
+    expr: eseries_power_supply_status{status!~"(optimal)"} == 1
+    for: 5m
+    labels:
+      severity: warning
+      alertgroup: eseries
+      notify: 12h
+    annotations:
+      title: E-Series power supply on {{ $labels.instance }} is not healthy
+      description: E-Series power supply on {{ $labels.instance }} is {{ $labels.status }} (tray={{ $labels.tray }},slot={{ $labels.slot }})
+  - alert: ESeriesCacheMemoryDIMMHealth
+    expr: eseries_cache_memory_dimm_status{status!~"(optimal)"} == 1
+    for: 5m
+    labels:
+      severity: warning
+      alertgroup: eseries
+      notify: 12h
+    annotations:
+      title: E-Series cache memory DIMM on {{ $labels.instance }} is not healthy
+      description: E-Series cache memory DIMM on {{ $labels.instance }} is {{ $labels.status }} (tray={{ $labels.tray }},slot={{ $labels.slot }})
+  - alert: ESeriesThermalSensorHealth
+    expr: eseries_thermal_sensor_status{status!~"(optimal)"} == 1
+    for: 5m
+    labels:
+      severity: warning
+      alertgroup: eseries
+      notify: 12h
+    annotations:
+      title: E-Series thermal sensor on {{ $labels.instance }} is not healthy
+      description: E-Series thermal sensor on {{ $labels.instance }} is {{ $labels.status }} (tray={{ $labels.tray }},slot={{ $labels.slot }})
+
