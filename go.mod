@@ -3,7 +3,7 @@ module github.com/treydock/eseries_exporter
 go 1.17
 
 require (
-	github.com/go-kit/kit v0.12.0
+	github.com/go-kit/log v0.2.0
 	github.com/prometheus/client_golang v1.12.1
 	github.com/prometheus/common v0.32.1
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
@@ -15,7 +15,6 @@ require (
 	github.com/alecthomas/units v0.0.0-20211218093645-b94a6e3cc137 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
-	github.com/go-kit/log v0.2.0 // indirect
 	github.com/go-logfmt/logfmt v0.5.1 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/go-cmp v0.5.6 // indirect
