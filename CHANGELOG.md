@@ -1,3 +1,9 @@
+## 1.3.0 / 2022-03-08
+
+* Improved SSL support for communicating with proxy API
+* Update to Go 1.17
+* Update Go module dependencies
+
 ## 1.3.0-rc.0 / 2021-08-24
 
 * Improved SSL support for communicating with proxy API
